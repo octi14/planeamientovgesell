@@ -1,0 +1,190 @@
+// ========================================
+// CONFIGURACIÓN DE FUENTES
+// ========================================
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+// ========================================
+// CLASES DE COLOR DE TEXTO
+// ========================================
+.text-green {
+  color: #15571f;
+  font-weight: bold;
+}
+
+.text-black {
+  color: #000000;
+  font-weight: bold;
+}
+
+.text-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+// ========================================
+// LAYOUT Y SECCIONES
+// ========================================
+.main-background {
+  background-color: #f8f9fa;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  background-color: #f0f0f0;
+  padding: 3rem 2rem;
+  margin-bottom: 0;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.btn-section {
+  background-color: #dedede;
+  padding: 3rem 2rem;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+// ========================================
+// SECCIÓN DE CONTACTO
+// ========================================
+.contact-section {
+  background-color: #f8f5f5;
+  padding: 3rem 2rem;
+  margin-bottom: 0;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.contact-section h3.text-green {
+  font-family: 'Montserrat', sans-serif;
+  color: #0b6819;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-section h6.text-black {
+  color: #000000;
+  font-weight: bold;
+}
+
+.contact-section .small {
+  color: #6c757d;
+  font-weight: 600;
+}
+
+.contact-section .col-md-4:not(:last-child) {
+  border-right: 1px solid #dee2e6;
+}
+
+.contact-section .col-md-3:not(:last-child) {
+  border-right: 1px solid #dee2e6;
+}
+
+// ========================================
+// TIPOGRAFÍA
+// ========================================
+.banner-title {
+  color: #343a40;
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.landing-text {
+  color: #6c757d;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.hero-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.hero-image {
+  width: 100%;
+  max-height: 680px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    max-height: 200px;
+  }
+}
+
+// Estilos para la sección NUESTRA LABOR
+.section h3.text-green {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.section p.text-roboto {
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.section ul.text-roboto {
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.section ul.text-roboto li {
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+// ========================================
+// ESTILOS PARA B-CARD
+// ========================================
+.b-card {
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+.b-card .card-header {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  border-radius: 8px 8px 0 0;
+  padding: 1rem 1.5rem;
+}
+
+.b-card .card-body {
+  padding: 1.5rem;
+}
+
+.b-card .card-header h5 {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.b-card .card-header .b-icon {
+  color: #6c757d;
+  font-size: 1.2rem;
+} 
