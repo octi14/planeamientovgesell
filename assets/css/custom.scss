@@ -11,6 +11,7 @@ body {
 .text-green {
   color: #15571f;
   font-weight: bold;
+  font-size: 1.8rem;
 }
 
 .text-black {
@@ -25,11 +26,38 @@ body {
 // ========================================
 // LAYOUT Y SECCIONES
 // ========================================
+#app-layout {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#app-content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .main-background {
   background-color: #f8f9fa;
   width: 100%;
-  margin: 0;
-  padding: 0;
+  max-width: 100%;
 }
 
 .section {
@@ -39,6 +67,7 @@ body {
   border-radius: 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   width: 100%;
+  max-width: 100%;
 }
 
 .btn-section {
@@ -48,6 +77,7 @@ body {
   border-radius: 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   width: 100%;
+  max-width: 100%;
 }
 
 // ========================================
@@ -60,6 +90,7 @@ body {
   border-radius: 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   width: 100%;
+  max-width: 100%;
 }
 
 .contact-section h3.text-green {

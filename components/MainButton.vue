@@ -28,12 +28,12 @@ export default {
   font-weight: bold !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
-  padding: 15px 20px !important;
-  height: 80px !important;
+  padding: 25px 20px !important;
+  height: 100px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  font-size: 1.1rem !important;
+  font-size: 1.3rem !important;
   width: 100% !important;
   cursor: pointer !important;
   color: #ff6b00 !important;
@@ -49,13 +49,13 @@ export default {
 }
 
 .main-button--active {
-  background-color: #ff6b00 !important;
-  color: #ffffff !important;
+  background-color: #ffbd8d !important;
+  color: #e65a00 !important;
 }
 
 .main-button--active:hover {
-  background-color: #e65a00 !important;
-  color: #ffffff !important;
+  background-color: #ffb688 !important;
+  color: #e65a00 !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 2px 4px rgba(255, 107, 0, 0.4) !important;
 }

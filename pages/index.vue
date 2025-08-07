@@ -14,17 +14,17 @@
             <div class="text-center">
               <h3 class="text-green mb-5 mt-5">¿Qué trámite estás buscando?</h3>
               <div class="row justify-content-center">
-                <div class="col-12 col-md-2 mb-4 mx-3">
+                <div class="col-12 col-md-3 mb-4 mx-4">
                   <MainButton :isActive="selectedOption === 1" @click="selectOption(1)">
                     PLANEAMIENTO,<br>HÁBITAT Y VIVIENDA
                   </MainButton>
                 </div>
-                <div class="col-12 col-md-2 mb-4 mx-3">
+                <div class="col-12 col-md-3 mb-4 mx-4">
                   <MainButton :isActive="selectedOption === 2" @click="selectOption(2)">
                     OBRAS PARTICULARES
                   </MainButton>
                 </div>
-                <div class="col-12 col-md-2 mb-4 mx-3">
+                <div class="col-12 col-md-3 mb-4 mx-4">
                   <MainButton :isActive="selectedOption === 3" @click="selectOption(3)">
                     D. I. E. P. E. P.
                   </MainButton>
