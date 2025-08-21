@@ -145,7 +145,7 @@ body {
 
 .hero-image {
   width: 100%;
-  max-height: 680px;
+  max-height: 600px;
   height: auto;
   object-fit: cover;
   object-position: center;
@@ -156,7 +156,7 @@ body {
 
 @media (max-width: 768px) {
   .hero-image {
-    max-height: 200px;
+    max-height: 600px;
   }
 }
 
