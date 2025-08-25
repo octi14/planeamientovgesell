@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "16.x"
+    "node": "16.x",
+    "npm": "8.x"
   },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "node server.js",
     "export": "nuxt export",
     "serve": "nuxt serve",
     "generate": "nuxt generate",
