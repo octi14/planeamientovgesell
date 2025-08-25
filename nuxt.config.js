@@ -1,15 +1,5 @@
 export default {
   target: 'server',
-  
-  // Configuración del servidor para Heroku
-  server: {
-    port: process.env.PORT || 3000,
-    host: '0.0.0.0'
-  },
-  
-  // Configuración para el modo de renderizado
-  mode: 'universal',
-  
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Planeamiento Villa Gesell',
@@ -55,24 +45,12 @@ export default {
 
   // BootstrapVue module configuration https://bootstrap-vue.org/docs#nuxtjs-module
   bootstrapVue: {
-    bootstrapCSS: false, // Deshabilitar CSS de Bootstrap (lo importamos manualmente)
+    bootstrapCSS: false, // Or `css: false`
     icons: true,
-    bootstrapVueCSS: false, // Deshabilitar CSS de BootstrapVue (lo importamos manualmente)
+    bootstrapVueCSS: false, // Or `bvCSS: false`
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extend(config, { isDev, isClient }) {
-      config.resolve.alias['vue'] = 'vue/dist/vue.common'
-    }
-  },
-  
-  // Configuración para producción
-  render: {
-    bundleRenderer: {
-      shouldPreload: (file, type) => {
-        return ['script', 'style', 'font'].includes(type)
-      }
-    }
   }
 } 

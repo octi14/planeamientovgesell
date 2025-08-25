@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "node server.js",
+    "start": "nuxt start",
     "export": "nuxt export",
     "serve": "nuxt serve",
     "generate": "nuxt generate",
