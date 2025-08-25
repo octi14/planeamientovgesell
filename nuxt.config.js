@@ -1,5 +1,12 @@
 export default {
   target: 'server',
+  
+  // Configuración del servidor para Heroku
+  server: {
+    port: process.env.PORT || 3000,
+    host: '0.0.0.0'
+  },
+  
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Planeamiento Villa Gesell',
@@ -41,6 +48,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/axios',
   ],
 
   // BootstrapVue module configuration https://bootstrap-vue.org/docs#nuxtjs-module
@@ -48,6 +57,11 @@ export default {
     bootstrapCSS: false, // Or `css: false`
     icons: true,
     bootstrapVueCSS: false, // Or `bvCSS: false`
+  },
+
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {
+    // baseURL: 'http://localhost:3000/',  // Used as fallback if no runtime config is provided
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
