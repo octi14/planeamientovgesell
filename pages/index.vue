@@ -161,7 +161,7 @@
               <div class="col-md-9">
                 <div class="row">
                   <div class="col-md-3 mb-3">
-                    <h6 class="text-black text-roboto">Secretaría de Planeamiento, Hábitat <br/> y Vivienda</h6>
+                    <h6 class="text-black text-roboto">Secretaría de Planeamiento, Obras y <br/> Servicios Públicos</h6>
                     <p class="small text-muted text-roboto">Avenida 6 N.°<br>
                     Tel.: <br>
                     Horario: <br>
