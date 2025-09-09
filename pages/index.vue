@@ -1,12 +1,17 @@
 <template>
   <div class="page main-background">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row no-gutters">
         <div class="col-12">
           
           <!-- Hero Section -->
           <div class="hero-section">
-            <img src="~/assets/css/img/heroimg.png" alt="Planeamiento, Hábitat y Vivienda" class="hero-image">
+            <div class="hero-container">
+              <img src="~/assets/css/img/Banner.png" alt="Planeamiento, Hábitat y Vivienda" class="hero-image">
+              <div class="hero-text-overlay">
+                <h1 class="hero-title">Planeamiento, Obras Particulares y DIEPEP</h1>
+              </div>
+            </div>
           </div>
 
           <!-- Call to Action Section -->
@@ -38,7 +43,7 @@
             <!-- NUESTRA LABOR Section -->
             <div class="section">
               <div class="row justify-content-center">
-                <div class="col-8">
+                <div class="col-9">
                   <h3 class="text-green mb-3">NUESTRA LABOR</h3>
                   <p class="text-roboto">La Dirección de Vivienda y Hábitat fue creada en el 2015 con el objetivo de atender la demanda habitacional, mediante la ejecución de obras de urbanización, infraestructura y equipamiento, asegurando el acceso a una vivienda digna en igualdad de oportunidades para los distintos sectores sociales, con el fin de constituir un hábitat digno, dotado de servicios y sin riesgo ambiental que contribuya al desarrollo de nuestro Partido mejorando o transformando así sus condiciones de vida.</p>
                   <p class="text-roboto">Asimismo, se trabaja en forma conjunta con la Escribanía General de Gobierno y la Subsecretaría Social de Tierras, Urbanismo y Vivienda en la regularización dominial de inmuebles.</p>
@@ -88,7 +93,8 @@
                 </template>
                 <template #default v-if="collapseStates.solicitud">
                   <b-collapse :visible="collapseStates.solicitud" class="collapse-content">
-                    <p class="text-roboto">Contenido de solicitud de copia de plano...</p>
+                    <p class="text-roboto">Para solicitar copia de planos aprobados o registrados deberá el propietario del inmueble requerirlo por mesa de entradas de la Dirección acreditando titularidad por medio de escritura y DNI.</p>
+                    <p class="text-roboto">La copia del plano tiene un costo que se informará y abonará en el momento por el propietario. Posteriormente se le entregará hasta una semana después.</p>
                   </b-collapse>
                 </template>
               </b-card>
@@ -154,6 +160,16 @@
             </div>
           </div>
 
+          <!-- Vista del Botón 3: D.I.E.P.E.P. -->
+          <div v-if="selectedOption === 3" class="section">
+            <div class="row justify-content-center">
+              <div class="col-9">
+                <h3 class="text-green mb-3">NUESTRA LABOR</h3>
+                <p class="text-roboto">La Dirección de Inspección de Edificios Privados y Espacios Públicos (DIEPEP) es el área encargada de otorgar permisos de obra de mantenimiento edilicio en cumplimiento con lo dispuesto en la ordenanza 1847/02 y sus modificatorias.</p>
+              </div>
+            </div>
+          </div>
+
           <!-- Información de Contacto (siempre visible) -->
           <div class="contact-section">
             <h3 class="text-green text-center mb-5">Información de Contacto</h3>
@@ -162,29 +178,31 @@
                 <div class="row">
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Secretaría de Planeamiento, Obras y <br/> Servicios Públicos</h6>
-                    <p class="small text-muted text-roboto">Avenida 6 N.°<br>
-                    Tel.: <br>
-                    Horario: <br>
-                    Mail: </p>
+                    <p class="small text-muted text-roboto">Avenida 6 N.° 660<br>
+                    Tel.: (2255)46-7923<br>
+                    Horario: Lunes a Viernes de 8 a 14hs<br>
+                    Mail: planeamiento@gesell.gob.ar</p>
                   </div>
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Dirección Obras Particulares (D.O.P.)</h6>
                     <p class="small text-muted text-roboto">Avenida 3 N.º 820 1 piso<br>
                     Tel: 02255 478044<br>
-                    Horario: lunes a viernes de 8h a 14h<br>
+                    Horario: Lunes a Viernes de 8 a 14hs<br>
                     Mail: obrasparticulares@gesell.gob.ar</p>
                   </div>
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Dirección de Inspección de <br/> Edificios Privados y Espacios Públicos (D.I.E.P.E.P.)</h6>
                     <p class="small text-muted text-roboto">Avenida 6 N°660<br>
                     Tel.: 02255 454483<br>
-                    Horario: lunes a viernes de 8h a 14h<br>
+                    Horario: Lunes a Viernes de 8 a 14hs<br>
                     Mail: dirinspyfachadabalcones@gesell.gob.ar</p>
                   </div>
                   <div class="col-md-3 mb-3">
-                    <h6 class="text-black text-roboto">Dirección de Hábitat</h6>
+                    <h6 class="text-black text-roboto">Secretaría de Hábitat</h6>
                     <p class="small text-muted text-roboto">Avenida 5 N°522<br>
-                    Horario: Lunes a Viernes de 8 a 14hs</p>
+                    Tel.: (2255)47-8240<br>
+                    Horario: Lunes a Viernes de 8 a 14hs<br>
+                    Mail: habitat@gesell.gob.ar</p>
                   </div>
                 </div>
               </div>
@@ -214,12 +232,6 @@ export default {
   },
   methods: {
     selectOption(option) {
-      // No hacer nada si es la opción 3 (DIEPEP) porque no hay contenido
-      if (option === 3) {
-        console.log('Opción DIEPEP seleccionada - sin contenido disponible');
-        return;
-      }
-      
       // Si se hace clic en el mismo botón que ya está seleccionado, deseleccionarlo
       if (this.selectedOption === option) {
         this.selectedOption = null;
@@ -262,9 +274,6 @@ export default {
   background-color: #f8f5f5;
 }
 
-.shadow-card{
-  /* Sombra eliminada para evitar conflictos */
-}
 
 .section-card{
   margin: 2rem 0;
@@ -392,7 +401,7 @@ export default {
 }
 
 .collapse-content {
-  margin: 0.5rem 1rem !important;
+  margin: 0.5rem 0.2rem !important;
   padding: 0 !important;
 }
 
@@ -510,5 +519,72 @@ ul.text-roboto li::before {
   font-size: 1.5rem;
   color: #15571f;
   font-weight: bold;
+}
+
+/* Estilos para el texto superpuesto en la imagen hero */
+.hero-container {
+  position: relative;
+  width: 100%;
+  margin-top: 1.6rem;
+  padding: 0;
+}
+
+.hero-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  width: 90%;
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+/* Responsive para el texto hero */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
+  
+  .hero-text-overlay {
+    width: 95%;
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+  
+  .hero-text-overlay {
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+  }
 }
 </style> 
