@@ -43,8 +43,8 @@
             <!-- NUESTRA LABOR Section -->
             <div class="section">
               <div class="row justify-content-center">
-                <div class="col-9">
-                  <h3 class="text-green mb-3">NUESTRA LABOR</h3>
+                <div class="col-11 col-lg-10">
+                  <h3 class="text-green mb-4 mt-5">NUESTRA LABOR</h3>
                   <p class="text-roboto">La Dirección de Vivienda y Hábitat fue creada en el 2015 con el objetivo de atender la demanda habitacional, mediante la ejecución de obras de urbanización, infraestructura y equipamiento, asegurando el acceso a una vivienda digna en igualdad de oportunidades para los distintos sectores sociales, con el fin de constituir un hábitat digno, dotado de servicios y sin riesgo ambiental que contribuya al desarrollo de nuestro Partido mejorando o transformando así sus condiciones de vida.</p>
                   <p class="text-roboto">Asimismo, se trabaja en forma conjunta con la Escribanía General de Gobierno y la Subsecretaría Social de Tierras, Urbanismo y Vivienda en la regularización dominial de inmuebles.</p>
                 </div>
@@ -54,15 +54,16 @@
 
           <!-- Vista del Botón 2: OBRAS PARTICULARES -->
           <div v-if="selectedOption === 2" class="obras-section">
-            <h3 class="text-green text-center mb-4 mt-5">NUESTRA LABOR</h3>
-            <ul class="col-8 my-4 mb-5 mx-auto text-roboto">
-              <li>Disponer e informar en lo relativo a la aplicación del Plan de Ordenamiento Municipal, las normativas constructivas y de aquellas normas que lo complementen.</li>
-              <li>Administrar el registro de construcciones de obras civiles que se proyectan y ejecutan en el ámbito del Partido de Villa Gesell.</li>
-              <li>Ofrecer una respuesta integral, confiable, en tiempo y forma de las solicitudes de trámites que realizan los administrados, respecto del registro para las obras civiles y privadas, nuevas o remodeladas, así como todas las instalaciones.</li>
-              <li>Mejorar la calidad de nuestros procesos, potenciando la profesionalidad de nuestros agentes; siendo una organización eficaz, eficiente y transparente.</li>
-            </ul>
+            <div class="row justify-content-center">
+              <div class="col-11 col-lg-10">
+              <h3 class="text-green mb-4 mt-5">NUESTRA LABOR</h3>
+              <p class="text-roboto">La Dirección de Obras Particulares (DOP) es el área encargada de otorgar permisos de obras nuevas, remodelaciones o demoliciones que se realicen en el partido de Villa Gesell en cumplimiento con lo dispuesto en el Código de Edificación y el Plan de Ordenamiento Municipal (POM).</p>
+              </div>
+            </div>
 
-            <div class="cards-wrapper">
+            <div class="cards-section">
+              <div class="row justify-content-center">
+                <div class="col-11 col-lg-10">
               <!-- ¿Cómo matricularse como profesional? -->
               <b-card class="section-card shadow-card mb-3">
                 <template #header>
@@ -109,12 +110,7 @@
                 </template>
                 <template #default v-if="collapseStates.horarios">
                   <b-collapse :visible="collapseStates.horarios" class="collapse-content">
-                    <p class="text-roboto">Según lo determinado por la <strong>Ordenanza 3494/24</strong>:</p>
-                    <ul class="text-roboto">
-                      <li>Desde 16/03 al 14/12 (art. 10): Lunes a viernes de 08:00 a 19:00 hs.</li>
-                      <li>Desde 15/12 al 15/03 (art. 2): Lunes a viernes de 10:00 a 14:00 hs. y de 16:00 a 20:00 hs.</li>
-                    </ul>
-                    <p class="text-roboto">Ver disposiciones particulares</p>
+                    <p class="text-roboto">Según zona y época por Ordenanza 3494/24</p>
                   </b-collapse>
                 </template>
               </b-card>
@@ -157,14 +153,16 @@
                   </b-collapse>
                 </template>
               </b-card>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- Vista del Botón 3: D.I.E.P.E.P. -->
           <div v-if="selectedOption === 3" class="section">
             <div class="row justify-content-center">
-              <div class="col-9">
-                <h3 class="text-green mb-3">NUESTRA LABOR</h3>
+              <div class="col-11 col-lg-10">
+                <h3 class="text-green mb-4 mt-5">NUESTRA LABOR</h3>
                 <p class="text-roboto">La Dirección de Inspección de Edificios Privados y Espacios Públicos (DIEPEP) es el área encargada de otorgar permisos de obra de mantenimiento edilicio en cumplimiento con lo dispuesto en la ordenanza 1847/02 y sus modificatorias.</p>
               </div>
             </div>
@@ -178,31 +176,35 @@
                 <div class="row">
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Secretaría de Planeamiento, Obras y <br/> Servicios Públicos</h6>
-                    <p class="small text-muted text-roboto">Avenida 6 N.° 660<br>
-                    Tel.: (2255)46-7923<br>
-                    Horario: Lunes a Viernes de 8 a 14hs<br>
-                    Mail: planeamiento@gesell.gob.ar</p>
+                    <p class="small text-muted text-roboto">
+                      <b-icon icon="geo-alt-fill"/> Avenida 6 N.° 660<br>
+                    <b-icon icon="telephone-fill"/> (2255) 46-7923<br>
+                    <b-icon icon="clock-fill"/> Lunes a Viernes de 8 a 14<br>
+                    <b-icon icon="envelope-fill"/> planeamiento@gesell.gob.ar</p>
                   </div>
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Dirección Obras Particulares (D.O.P.)</h6>
-                    <p class="small text-muted text-roboto">Avenida 3 N.º 820 1 piso<br>
-                    Tel: 02255 478044<br>
-                    Horario: Lunes a Viernes de 8 a 14hs<br>
-                    Mail: obrasparticulares@gesell.gob.ar</p>
+                    <p class="small text-muted text-roboto">
+                      <b-icon icon="geo-alt-fill"/> Avenida 3 N.º 820 1 piso<br>
+                    <b-icon icon="telephone-fill"/> (2255) 47-8044<br>
+                    <b-icon icon="clock-fill"/> Lunes a Viernes de 8 a 14<br>
+                    <b-icon icon="envelope-fill"/> obrasparticulares@gesell.gob.ar</p>
                   </div>
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Dirección de Inspección de <br/> Edificios Privados y Espacios Públicos (D.I.E.P.E.P.)</h6>
-                    <p class="small text-muted text-roboto">Avenida 6 N°660<br>
-                    Tel.: 02255 454483<br>
-                    Horario: Lunes a Viernes de 8 a 14hs<br>
-                    Mail: dirinspyfachadabalcones@gesell.gob.ar</p>
+                    <p class="small text-muted text-roboto">
+                      <b-icon icon="geo-alt-fill"/> Avenida 6 N°660<br>
+                    <b-icon icon="telephone-fill"/> (2255) 45-4483<br>
+                    <b-icon icon="clock-fill"/> Lunes a Viernes de 8 a 14<br>
+                    <b-icon icon="envelope-fill"/> dirinspyfachadabalcones@gesell.gob.ar</p>
                   </div>
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Secretaría de Hábitat</h6>
-                    <p class="small text-muted text-roboto">Avenida 5 N°522<br>
-                    Tel.: (2255)47-8240<br>
-                    Horario: Lunes a Viernes de 8 a 14hs<br>
-                    Mail: habitat@gesell.gob.ar</p>
+                    <p class="small text-muted text-roboto">
+                      <b-icon icon="geo-alt-fill"/> Avenida 5 N°522<br>
+                    <b-icon icon="telephone-fill"/> (2255) 47-8240<br>
+                    <b-icon icon="clock-fill"/> Lunes a Viernes de 8 a 14<br>
+                    <b-icon icon="envelope-fill"/> habitat@gesell.gob.ar</p>
                   </div>
                 </div>
               </div>
@@ -239,6 +241,26 @@ export default {
       } else {
         this.selectedOption = option;
         console.log(`Opción seleccionada: ${option}`);
+        
+        // Scroll suave hacia la sección correspondiente
+        this.$nextTick(() => {
+          const sectionMap = {
+            1: '.section', // Para PLANEAMIENTO, HÁBITAT Y VIVIENDA
+            2: '.obras-section', // Para OBRAS PARTICULARES
+            3: '.section' // Para D.I.E.P.E.P.
+          };
+          
+          const targetSelector = sectionMap[option];
+          if (targetSelector) {
+            const targetElement = document.querySelector(targetSelector);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          }
+        });
       }
     },
     
@@ -368,8 +390,12 @@ export default {
 }
 
 .cards-wrapper {
-  max-width: 70%;
   margin: 0 auto;
+}
+
+.cards-section {
+  width: 100%;
+  padding: 2rem 0;
 }
 
 .text-green {
@@ -504,6 +530,23 @@ ul.text-roboto li::before {
 
 .section-card .card-body p b {
   font-weight: 500;
+}
+
+/* Asegurar que text-muted tenga peso de fuente normal */
+.text-muted {
+  font-weight: normal !important;
+}
+
+/* Mejorar legibilidad de textos pequeños con mayor espaciado entre letras */
+.small {
+  letter-spacing: 0.25px;
+}
+
+/* Estilos para iconos en datos de contacto */
+.contact-section .small .b-icon {
+  color: #bbbbbb;
+  margin-right: 0.5rem;
+  font-size: 1rem;
 }
 
 /* Estilos específicos para párrafos en la card de Documentación */
