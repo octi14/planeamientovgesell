@@ -53,7 +53,7 @@
           </div>
 
           <!-- Vista del Botón 2: OBRAS PARTICULARES -->
-          <div v-if="selectedOption === 2" class="obras-section">
+          <div v-if="selectedOption === 2" class="section">
             <div class="row justify-content-center">
               <div class="col-11 col-lg-10">
               <h3 class="text-green mb-4 mt-5">NUESTRA LABOR</h3>
@@ -74,12 +74,12 @@
                 </template>
                 <template #default v-if="collapseStates.matricula">
                   <b-collapse :visible="collapseStates.matricula" class="collapse-content">
-                    <p class="text-roboto">El trámite se realiza de forma presencial en nuestra oficina. Debe traer:</p>
+                    <p class="text-black text-roboto">El trámite se realiza de forma presencial en nuestra oficina. Debe traer:</p>
                     <ul class="text-roboto">
                       <li>Comprobante de Matrícula Provincial al día y</li>
                       <li>Fotocopia de DNI.</li>
                     </ul>
-                    <p class="text-roboto">Se le pedirá <b> abonar Inscripción Profesional y Matrícula Municipal Anual. </b> El número de Matrícula Municipal le será otorgado en el momento.<b> Recuerde que para cualquier presentación debe tener la matrícula municipal al día.</b></p>
+                    <p class="text-black text-roboto">Se le pedirá <b> abonar Inscripción Profesional y Matrícula Municipal Anual. </b> El número de Matrícula Municipal le será otorgado en el momento.<b> Recuerde que para cualquier presentación debe tener la matrícula municipal al día.</b></p>
                   </b-collapse>
                 </template>
               </b-card>
@@ -94,8 +94,12 @@
                 </template>
                 <template #default v-if="collapseStates.solicitud">
                   <b-collapse :visible="collapseStates.solicitud" class="collapse-content">
-                    <p class="text-roboto">Para solicitar copia de planos aprobados o registrados deberá el propietario del inmueble requerirlo por mesa de entradas de la Dirección acreditando titularidad por medio de escritura y DNI.</p>
-                    <p class="text-roboto">La copia del plano tiene un costo que se informará y abonará en el momento por el propietario. Posteriormente se le entregará hasta una semana después.</p>
+                    <ul class="text-roboto">
+                    <li>Para solicitar copia de planos aprobados o registrados, el propietario del inmueble
+                       deberá requerirlo por mesa de entradas de la Dirección acreditando titularidad por medio de
+                        escritura y DNI.</li>
+                    <li>La copia del plano tiene un costo que se informará y abonará en el momento por el propietario. Posteriormente se le entregará hasta una semana después.</li>
+                    </ul>
                   </b-collapse>
                 </template>
               </b-card>
@@ -110,7 +114,8 @@
                 </template>
                 <template #default v-if="collapseStates.horarios">
                   <b-collapse :visible="collapseStates.horarios" class="collapse-content">
-                    <p class="text-roboto">Según zona y época por Ordenanza 3494/24</p>
+                    <p class="text-black text-roboto">Los horarios de trabajo de obra están regulados por la Ordenanza 3494/24
+                       y varían según la zona y época.</p>
                   </b-collapse>
                 </template>
               </b-card>
@@ -427,7 +432,7 @@ export default {
 }
 
 .collapse-content {
-  margin: 0.5rem 0.2rem !important;
+  margin: 0 0.2rem !important;
   padding: 0 !important;
 }
 
@@ -435,6 +440,10 @@ export default {
   display: none !important;
   height: 0 !important;
   overflow: hidden !important;
+}
+
+.collapse-content .text-black {
+  color: #000000 !important;
 }
 
 /* Estilos para viñetas de la lista principal */
@@ -467,7 +476,7 @@ ul.text-roboto li::before {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   color: #000000;
-  line-height: 1.6;
+  line-height: 1.37;
   font-weight: normal;
 }
 
@@ -543,6 +552,11 @@ ul.text-roboto li::before {
 }
 
 /* Estilos para iconos en datos de contacto */
+
+.contact-section .text-roboto {
+  color: #505050;
+}
+
 .contact-section .small .b-icon {
   color: #bbbbbb;
   margin-right: 0.5rem;
