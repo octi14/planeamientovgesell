@@ -114,7 +114,8 @@
                 </template>
                 <template #default v-if="collapseStates.horarios">
                   <b-collapse :visible="collapseStates.horarios" class="collapse-content">
-                    <p class="text-black text-roboto">Los horarios de trabajo de obra están regulados por la Ordenanza 3494/24
+                    <p class="text-black text-roboto">Los horarios de trabajo de obra están regulados por la
+                    <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21sd9f1f92abc534e9e88d3db0c0b7bb69f&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank">Ordenanza 3494/24</a>
                        y varían según la zona y época.</p>
                   </b-collapse>
                 </template>
