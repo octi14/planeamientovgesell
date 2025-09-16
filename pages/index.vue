@@ -115,7 +115,7 @@
                 <template #default v-if="collapseStates.horarios">
                   <b-collapse :visible="collapseStates.horarios" class="collapse-content">
                     <p class="text-black text-roboto">Los horarios de trabajo de obra están regulados por la
-                    <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21sd9f1f92abc534e9e88d3db0c0b7bb69f&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank">Ordenanza 3494/24</a>
+                    <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21sd9f1f92abc534e9e88d3db0c0b7bb69f&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank"><u>Ordenanza 3494/24</u></a>
                        y varían según la zona y época.</p>
                   </b-collapse>
                 </template>
@@ -178,7 +178,7 @@
           <div class="contact-section">
             <h3 class="text-green text-center mb-5">Información de Contacto</h3>
             <div class="row justify-content-center mt-5">
-              <div class="col-md-9">
+              <div class="col-md-10">
                 <div class="row">
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Secretaría de Planeamiento, Obras y <br/> Servicios Públicos</h6>
@@ -420,7 +420,7 @@ export default {
 }
 
 .section-card .card-body {
-  padding: 0 0 1.5rem 0.5rem !important;
+  padding: 0 0 1.5rem 0 !important;
 }
 
 .section-card .card-body ul {
@@ -448,7 +448,7 @@ export default {
 }
 
 .collapse-content .text-black {
-  color: #000000 !important;
+  color: #505050 !important;
 }
 
 /* Estilos para viñetas de la lista principal */
@@ -471,7 +471,7 @@ ul.text-roboto li::before {
   position: absolute;
   left: 0;
   top: 0;
-  color: #000000;
+  color: #505050;
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -480,7 +480,7 @@ ul.text-roboto li::before {
 .section-card ul.text-roboto li {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  color: #000000;
+  color: #505050;
   line-height: 1.37;
   font-weight: normal;
 }
@@ -521,6 +521,9 @@ ul.text-roboto li::before {
   background-size: contain;
 }
 
+a{
+  color: #0c681a;
+}
 /* Estilos para enlaces en la lista de documentación */
 .section-card.documentacion-card ul.text-roboto li a {
   color: #0c681a;
