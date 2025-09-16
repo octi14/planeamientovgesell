@@ -419,7 +419,11 @@ export default {
 }
 
 .section-card .card-body {
-  padding: 1.5rem !important;
+  padding: 0 0 1.5rem 0.5rem !important;
+}
+
+.section-card .card-body ul {
+  padding-left: 1.3rem !important;
 }
 
 .section-card .card-body:empty {
@@ -493,6 +497,10 @@ ul.text-roboto li::before {
 }
 
 /* Estilos específicos para la card de Documentación */
+.documentacion-card .text-dark{
+  padding-left: 1.3rem !important;
+}
+
 .section-card.documentacion-card ul.text-roboto li {
   font-size: 1rem;
   margin-bottom: 0.3rem;
@@ -530,7 +538,8 @@ ul.text-roboto li::before {
 
 .section-card .card-body p {
   margin-bottom: 1rem;
-  padding: 0 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
   line-height: 1.6;
   font-size: 1.1rem;
   color: #343434bc;
