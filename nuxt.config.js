@@ -1,7 +1,7 @@
 export default {
-  target: 'server',
+  target: 'static',
   
-  // Configuración del servidor para Heroku
+  // Configuración del servidor para Heroku (mantenida por compatibilidad)
   server: {
     port: process.env.PORT || 3000,
     host: '0.0.0.0'
