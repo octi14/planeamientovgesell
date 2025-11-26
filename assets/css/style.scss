@@ -1,14 +1,8 @@
 // Importar variables del proyecto
 @import "./variables";
 
-// Importar Bootstrap completo
-@import "~bootstrap/scss/bootstrap";
-
-// Habilitar todas las utilidades de Bootstrap
-$enable-utilities: true;
-
-// Importar Bootstrap-Vue
-@import "~bootstrap-vue/src/index.scss";
+// Importar Bootstrap 5 completo
+@import "bootstrap/scss/bootstrap";
 
 // Importar estilos personalizados al final
 @import "./custom"; 

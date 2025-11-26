@@ -1,13 +1,13 @@
 <template>
   <div class="page main-background">
     <div class="container-fluid">
-      <div class="row no-gutters">
+      <div class="row g-0">
         <div class="col-12">
           
           <!-- Hero Section -->
           <div class="hero-section">
             <div class="hero-container">
-              <img src="~/assets/css/img/Banner.png" alt="Planeamiento, Hábitat y Vivienda" class="hero-image" loading="eager" fetchpriority="high">
+              <img src="/assets/css/img/Banner.png" alt="Planeamiento, Hábitat y Vivienda" class="hero-image" loading="eager" fetchpriority="high">
               <div class="hero-text-overlay">
                 <h1 class="hero-title">Planeamiento, Obras Particulares y DIEPEP</h1>
               </div>
@@ -65,73 +65,73 @@
               <div class="row justify-content-center">
                 <div class="col-11 col-lg-10">
               <!-- ¿Cómo matricularse como profesional? -->
-              <b-card class="section-card shadow-card mb-3">
-                <template #header>
-                  <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('matricula')" style="cursor: pointer;">
+              <div class="card section-card shadow-card mb-3">
+                <div class="card-header">
+                  <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('matricula')" style="cursor: pointer;" data-bs-toggle="collapse" :data-bs-target="'#collapse-matricula'" aria-expanded="false" :aria-controls="'collapse-matricula'">
                     <h5 class="text-green mb-0">¿Cómo matricularse como profesional?</h5>
-                    <b-icon :icon="collapseStates.matricula ? 'chevron-up' : 'chevron-down'"></b-icon>
+                    <i :class="collapseStates.matricula ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
                   </div>
-                </template>
-                <template #default v-if="collapseStates.matricula">
-                  <b-collapse :visible="collapseStates.matricula" class="collapse-content">
+                </div>
+                <div v-if="collapseStates.matricula" class="collapse-content collapse" :class="{ show: collapseStates.matricula }" id="collapse-matricula">
+                  <div class="card-body">
                     <p class="text-black text-roboto">El trámite se realiza de forma presencial en nuestra oficina. Debe traer:</p>
                     <ul class="text-roboto">
                       <li>Comprobante de Matrícula Provincial al día y</li>
                       <li>Fotocopia de DNI.</li>
                     </ul>
                     <p class="text-black text-roboto">Se le pedirá <b> abonar Inscripción Profesional y Matrícula Municipal Anual. </b> El número de Matrícula Municipal le será otorgado en el momento.<b> Recuerde que para cualquier presentación debe tener la matrícula municipal al día.</b></p>
-                  </b-collapse>
-                </template>
-              </b-card>
+                  </div>
+                </div>
+              </div>
 
               <!-- Solicitud de Copia de Plano -->
-              <b-card class="section-card shadow-card mb-3">
-                <template #header>
-                  <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('solicitud')" style="cursor: pointer;">
+              <div class="card section-card shadow-card mb-3">
+                <div class="card-header">
+                  <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('solicitud')" style="cursor: pointer;" data-bs-toggle="collapse" :data-bs-target="'#collapse-solicitud'" aria-expanded="false" :aria-controls="'collapse-solicitud'">
                     <h5 class="text-green mb-0">Solicitud de Copia de Plano</h5>
-                    <b-icon :icon="collapseStates.solicitud ? 'chevron-up' : 'chevron-down'"></b-icon>
+                    <i :class="collapseStates.solicitud ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
                   </div>
-                </template>
-                <template #default v-if="collapseStates.solicitud">
-                  <b-collapse :visible="collapseStates.solicitud" class="collapse-content">
+                </div>
+                <div v-if="collapseStates.solicitud" class="collapse-content collapse" :class="{ show: collapseStates.solicitud }" id="collapse-solicitud">
+                  <div class="card-body">
                     <ul class="text-roboto">
                     <li>Para solicitar copia de planos aprobados o registrados, el propietario del inmueble
                        deberá requerirlo por mesa de entradas de la Dirección acreditando titularidad por medio de
                         escritura y DNI.</li>
                     <li>La copia del plano tiene un costo que se informará y abonará en el momento por el propietario. Posteriormente se le entregará hasta una semana después.</li>
                     </ul>
-                  </b-collapse>
-                </template>
-              </b-card>
+                  </div>
+                </div>
+              </div>
 
               <!-- Horarios de Trabajo de Obra -->
-              <b-card class="section-card shadow-card mb-3">
-                <template #header>
-                  <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('horarios')" style="cursor: pointer;">
+              <div class="card section-card shadow-card mb-3">
+                <div class="card-header">
+                  <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('horarios')" style="cursor: pointer;" data-bs-toggle="collapse" :data-bs-target="'#collapse-horarios'" aria-expanded="false" :aria-controls="'collapse-horarios'">
                     <h5 class="text-green mb-0">Horarios de Trabajo de Obra</h5>
-                    <b-icon :icon="collapseStates.horarios ? 'chevron-up' : 'chevron-down'"></b-icon>
+                    <i :class="collapseStates.horarios ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
                   </div>
-                </template>
-                <template #default v-if="collapseStates.horarios">
-                  <b-collapse :visible="collapseStates.horarios" class="collapse-content">
+                </div>
+                <div v-if="collapseStates.horarios" class="collapse-content collapse" :class="{ show: collapseStates.horarios }" id="collapse-horarios">
+                  <div class="card-body">
                     <p class="text-black text-roboto">Los horarios de trabajo de obra están regulados por la
                     <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21sd9f1f92abc534e9e88d3db0c0b7bb69f&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank"><u>Ordenanza 3494/24</u></a>
                        y varían según la zona y época.</p>
-                  </b-collapse>
-                </template>
-              </b-card>
+                  </div>
+                </div>
+              </div>
 
               <!-- Documentación -->
-              <b-card class="section-card shadow-card mb-3 documentacion-card">
-                <template #header>
-                  <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('documentacion')" style="cursor: pointer;">
+              <div class="card section-card shadow-card mb-3 documentacion-card">
+                <div class="card-header">
+                  <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('documentacion')" style="cursor: pointer;" data-bs-toggle="collapse" :data-bs-target="'#collapse-documentacion'" aria-expanded="false" :aria-controls="'collapse-documentacion'">
                     <h5 class="text-green mb-0">Documentación</h5>
-                    <b-icon :icon="collapseStates.documentacion ? 'chevron-up' : 'chevron-down'"></b-icon>
+                    <i :class="collapseStates.documentacion ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
                   </div>
-                </template>
-                <template #default v-if="collapseStates.documentacion">
-                  <b-collapse :visible="collapseStates.documentacion" class="collapse-content">
-                    <h6 class="text-dark font-weight-bold text-roboto">Códigos y ordenanzas</h6>
+                </div>
+                <div v-if="collapseStates.documentacion" class="collapse-content collapse" :class="{ show: collapseStates.documentacion }" id="collapse-documentacion">
+                  <div class="card-body">
+                    <h6 class="text-dark fw-bold text-roboto">Códigos y ordenanzas</h6>
                     <ul class="text-roboto">
                       <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21s0559b1c958a1437187d2b8c6ee93afc4&parId=CDFD5F6443FDC16A%21sfe2c638f43224981b71bccbc58f0c6dd&o=OneUp" target="_blank" rel="noopener noreferrer">Plan de Ordenamiento Municipal</a></li>
                       <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s845dc44950f04c3c9b14b7c448a0a976&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank" rel="noopener noreferrer">Ordenanza de presentaciones y procedimientos municipales 961/92</a></li>
@@ -144,21 +144,21 @@
                       <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s2ac93a3892034e12bd747208ebbb1855&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank" rel="noopener noreferrer">Programa MI LOTE y presentación Municipal</a></li>
                     </ul>
                     
-                    <h6 class="text-dark font-weight-bold text-roboto">Multas</h6>
+                    <h6 class="text-dark fw-bold text-roboto">Multas</h6>
                     <ul class="text-roboto">
                       <li>Ordenanzas de multas (Ord. 931/91 – <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21scbb8e9406658439fbecfbd6dd2457b4f&parId=CDFD5F6443FDC16A%21s3f16db73217249318a969ea2fdbb1bf6&o=OneUp" target="_blank" rel="noopener noreferrer">2283/09</a> – 2243/17 – 2708/17 – <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21s761e9b92a43242f08077edf5228ebd89&parId=CDFD5F6443FDC16A%21s3f16db73217249318a969ea2fdbb1bf6&o=OneUp" target="_blank" rel="noopener noreferrer">2742/17</a> – <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21s7347a6b25f004d01980ea5e844ca9c95&parId=CDFD5F6443FDC16A%21s3f16db73217249318a969ea2fdbb1bf6&o=OneUp" target="_blank" rel="noopener noreferrer">3325/22</a>)</li>
                       <li>Planilla de liquidación de multas</li>
                     </ul>
                     
-                    <h6 class="text-dark font-weight-bold text-roboto">Permisos y Avisos de obra</h6>
+                    <h6 class="text-dark fw-bold text-roboto">Permisos y Avisos de obra</h6>
                     <ul class="text-roboto">
                       <li>Planillas y requisitos para presentación</li>
                       <li>Planilla Movimiento de suelos</li>
                       <li>Planilla extracción de arboles</li>
                     </ul>
-                  </b-collapse>
-                </template>
-              </b-card>
+                  </div>
+                </div>
+              </div>
                 </div>
               </div>
             </div>
@@ -183,34 +183,34 @@
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Secretaría de Planeamiento, Obras y <br/> Servicios Públicos</h6>
                     <p class="small text-muted text-roboto">
-                      <b-icon icon="geo-alt-fill"/> Avenida 6 N.° 660<br>
-                    <b-icon icon="telephone-fill"/> (2255) 46-7923<br>
-                    <b-icon icon="clock-fill"/> Lunes a Viernes de 8 a 14<br>
-                    <b-icon icon="envelope-fill"/> planeamiento@gesell.gob.ar</p>
+                      <i class="bi bi-geo-alt-fill"></i> Avenida 6 N.° 660<br>
+                    <i class="bi bi-telephone-fill"></i> (2255) 46-7923<br>
+                    <i class="bi bi-clock-fill"></i> Lunes a Viernes de 8 a 14<br>
+                    <i class="bi bi-envelope-fill"></i> planeamiento@gesell.gob.ar</p>
                   </div>
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Dirección Obras Particulares (D.O.P.)</h6>
                     <p class="small text-muted text-roboto">
-                      <b-icon icon="geo-alt-fill"/> Avenida 3 N.º 820 1 piso<br>
-                    <b-icon icon="telephone-fill"/> (2255) 47-8044<br>
-                    <b-icon icon="clock-fill"/> Lunes a Viernes de 8 a 14<br>
-                    <b-icon icon="envelope-fill"/> obrasparticulares@gesell.gob.ar</p>
+                      <i class="bi bi-geo-alt-fill"></i> Avenida 3 N.º 820 1 piso<br>
+                    <i class="bi bi-telephone-fill"></i> (2255) 47-8044<br>
+                    <i class="bi bi-clock-fill"></i> Lunes a Viernes de 8 a 14<br>
+                    <i class="bi bi-envelope-fill"></i> obrasparticulares@gesell.gob.ar</p>
                   </div>
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Dirección de Inspección de <br/> Edificios Privados y Espacios Públicos (D.I.E.P.E.P.)</h6>
                     <p class="small text-muted text-roboto">
-                      <b-icon icon="geo-alt-fill"/> Avenida 6 N°660<br>
-                    <b-icon icon="telephone-fill"/> (2255) 45-4483<br>
-                    <b-icon icon="clock-fill"/> Lunes a Viernes de 8 a 14<br>
-                    <b-icon icon="envelope-fill"/> dirinspyfachadabalcones@gesell.gob.ar</p>
+                      <i class="bi bi-geo-alt-fill"></i> Avenida 6 N°660<br>
+                    <i class="bi bi-telephone-fill"></i> (2255) 45-4483<br>
+                    <i class="bi bi-clock-fill"></i> Lunes a Viernes de 8 a 14<br>
+                    <i class="bi bi-envelope-fill"></i> dirinspyfachadabalcones@gesell.gob.ar</p>
                   </div>
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Secretaría de Hábitat</h6>
                     <p class="small text-muted text-roboto">
-                      <b-icon icon="geo-alt-fill"/> Avenida 5 N°522<br>
-                    <b-icon icon="telephone-fill"/> (2255) 47-8240<br>
-                    <b-icon icon="clock-fill"/> Lunes a Viernes de 8 a 14<br>
-                    <b-icon icon="envelope-fill"/> habitat@gesell.gob.ar</p>
+                      <i class="bi bi-geo-alt-fill"></i> Avenida 5 N°522<br>
+                    <i class="bi bi-telephone-fill"></i> (2255) 47-8240<br>
+                    <i class="bi bi-clock-fill"></i> Lunes a Viernes de 8 a 14<br>
+                    <i class="bi bi-envelope-fill"></i> habitat@gesell.gob.ar</p>
                   </div>
                 </div>
               </div>
@@ -223,45 +223,39 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'IndexPage',
-  data() {
-    return {
-      selectedOption: null,
-      collapseStates: {
-        matricula: false,
-        solicitud: false,
-        horarios: false,
-        documentacion: false,
-      },
-    }
-  },
-  methods: {
-    selectOption(option) {
-      // Si se hace clic en el mismo botón que ya está seleccionado, deseleccionarlo
-      if (this.selectedOption === option) {
-        this.selectedOption = null;
-      } else {
-        this.selectedOption = option;
-        
-        // Scroll suave hacia la sección correspondiente
-        this.$nextTick(() => {
-          const targetElement = document.querySelector('.section');
-          if (targetElement) {
-            targetElement.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        });
-      }
-    },
+<script setup>
+import { ref, nextTick } from 'vue'
 
-    toggleCollapse(section) {
-      this.collapseStates[section] = !this.collapseStates[section];
-    }
+const selectedOption = ref(null)
+const collapseStates = ref({
+  matricula: false,
+  solicitud: false,
+  horarios: false,
+  documentacion: false,
+})
+
+const selectOption = (option) => {
+  // Si se hace clic en el mismo botón que ya está seleccionado, deseleccionarlo
+  if (selectedOption.value === option) {
+    selectedOption.value = null
+  } else {
+    selectedOption.value = option
+    
+    // Scroll suave hacia la sección correspondiente
+    nextTick(() => {
+      const targetElement = document.querySelector('.section')
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      }
+    })
   }
+}
+
+const toggleCollapse = (section) => {
+  collapseStates.value[section] = !collapseStates.value[section]
 }
 </script>
 
@@ -451,7 +445,7 @@ a{
   color: #505050;
 }
 
-.contact-section .small .b-icon {
+.contact-section .small i {
   color: #bbbbbb;
   margin-right: 0.5rem;
   font-size: 1rem;
@@ -538,4 +532,4 @@ a{
     border-radius: 12px;
   }
 }
-</style> 
+</style>
