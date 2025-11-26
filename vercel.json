@@ -1,6 +1,7 @@
 {
   "buildCommand": "npm run generate",
   "outputDirectory": "dist",
+  "installCommand": "npm install",
   "headers": [
     {
       "source": "/assets/(.*)",
