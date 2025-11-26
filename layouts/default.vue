@@ -4,7 +4,7 @@
       <Navbar />
     </div>
     <div id="app-content" class="mt-5">
-      <Nuxt keep-alive />
+      <Nuxt />
     </div>
     <Foot />
   </div>
@@ -12,14 +12,6 @@
 
 <script>
 export default {
-  name: 'Default',
-  data() {
-    return {
-    };
-  },
-  mounted() {
-  },
-  methods: {
-  },
+  name: 'Default'
 }
 </script> 

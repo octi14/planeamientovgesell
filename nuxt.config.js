@@ -22,6 +22,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+      { rel: 'preload', href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap', as: 'style' },
+      { rel: 'preload', href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap', as: 'style' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap' }
     ]
@@ -33,38 +35,23 @@ export default {
     'bootstrap-icons/font/bootstrap-icons.css'
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
-
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-  ],
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    'bootstrap-vue/nuxt'
   ],
 
   // BootstrapVue module configuration https://bootstrap-vue.org/docs#nuxtjs-module
   bootstrapVue: {
-    bootstrapCSS: false, // Or `css: false`
+    bootstrapCSS: false,
     icons: true,
-    bootstrapVueCSS: false, // Or `bvCSS: false`
-  },
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    // baseURL: 'http://localhost:3000/',  // Used as fallback if no runtime config is provided
+    bootstrapVueCSS: false
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extractCSS: true
   }
 } 

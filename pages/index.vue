@@ -7,7 +7,7 @@
           <!-- Hero Section -->
           <div class="hero-section">
             <div class="hero-container">
-              <img src="~/assets/css/img/Banner.png" alt="Planeamiento, Hábitat y Vivienda" class="hero-image">
+              <img src="~/assets/css/img/Banner.png" alt="Planeamiento, Hábitat y Vivienda" class="hero-image" loading="eager" fetchpriority="high">
               <div class="hero-text-overlay">
                 <h1 class="hero-title">Planeamiento, Obras Particulares y DIEPEP</h1>
               </div>
@@ -229,7 +229,6 @@ export default {
   data() {
     return {
       selectedOption: null,
-      expandedCards: [],
       collapseStates: {
         matricula: false,
         solicitud: false,
@@ -243,43 +242,20 @@ export default {
       // Si se hace clic en el mismo botón que ya está seleccionado, deseleccionarlo
       if (this.selectedOption === option) {
         this.selectedOption = null;
-        console.log('Botón deseleccionado - volviendo al estado inicial');
       } else {
         this.selectedOption = option;
-        console.log(`Opción seleccionada: ${option}`);
         
         // Scroll suave hacia la sección correspondiente
         this.$nextTick(() => {
-          const sectionMap = {
-            1: '.section', // Para PLANEAMIENTO, HÁBITAT Y VIVIENDA
-            2: '.obras-section', // Para OBRAS PARTICULARES
-            3: '.section' // Para D.I.E.P.E.P.
-          };
-          
-          const targetSelector = sectionMap[option];
-          if (targetSelector) {
-            const targetElement = document.querySelector(targetSelector);
-            if (targetElement) {
-              targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }
+          const targetElement = document.querySelector('.section');
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
           }
         });
       }
-    },
-    
-    toggleCard(cardIndex) {
-      if (this.expandedCards.includes(cardIndex)) {
-        this.expandedCards = this.expandedCards.filter((index) => index !== cardIndex);
-      } else {
-        this.expandedCards.push(cardIndex);
-      }
-    },
-    
-    isCardExpanded(cardIndex) {
-      return this.expandedCards.includes(cardIndex);
     },
 
     toggleCollapse(section) {
@@ -290,18 +266,9 @@ export default {
 </script>
 
 <style scoped>
-.illustration-placeholder {
-  text-align: center;
-  padding: 2rem;
-  background-color: #f8f9fa;
-  border-radius: 10px;
-}
-
-/* Estilos del proyecto de redeterminación */
 .main-background{
   background-color: #f8f5f5;
 }
-
 
 .section-card{
   margin: 2rem 0;
@@ -311,92 +278,6 @@ export default {
   -webkit-box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.15);
   -moz-box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.15);
   border: none !important;
-}
-
-.section-title {
-  color: #0c681a !important;
-  cursor: pointer;
-  width: 100%;
-  display: inline-block;
-  margin-bottom:0px;
-  font-weight: bold;
-}
-
-.bi-chevron-compact-up, .bi-chevron-compact-down{
-  position: absolute;
-  right: 20px;
-}
-
-.icon-orange{
-  color: #E27910;
-}
-
-.li-icon, .li-title{
-  font-weight: 600;
-  color: #0c681a;
-}
-
-.li-icon, .li-content{
-  display: inline-block;
-}
-
-.li-title{
-  margin-bottom: 0.3rem;
-}
-
-.li-icon{
-  margin-right: 1%;
-  vertical-align: top;
-}
-
-.li-row{
-  display: flex;
-  width: 100%;
-}
-
-.first-li{
-  margin-top: 1rem;
-}
-
-.first-p{
-  margin-bottom: 1rem;
-}
-
-/* Estilos para Animaciones de Expansión/Contracción  */
-.expanded {
-  max-height: 3000px; /* Altura máxima cuando está expandido */
-}
-
-.expand-enter-active,
-.expand-leave-active {
-  transition: max-height 2s ease-out; /* Duración de la animación */
-}
-
-.expand-enter,
-.expand-leave-to {
-  max-height: 0; /* Altura inicial y final de la animación */
-  overflow: hidden;
-}
-
-@media (max-width: 1200px) {
-  .col-8{
-    max-width: 80%;
-  }
-}
-
-@media (max-width: 720px){
-  .col-8{
-    max-width: 90%;
-  }
-}
-
-.obras-section {
-  background-color: #f0f0f0;
-  padding: 1rem 2rem;
-}
-
-.cards-wrapper {
-  margin: 0 auto;
 }
 
 .cards-section {
