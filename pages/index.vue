@@ -1,13 +1,13 @@
 <template>
   <div class="page main-background">
     <div class="container-fluid">
-      <div class="row no-gutters">
+      <div class="row g-0">
         <div class="col-12">
           
           <!-- Hero Section -->
           <div class="hero-section">
             <div class="hero-container">
-              <img src="~/assets/css/img/Banner.png" alt="Planeamiento, Hábitat y Vivienda" class="hero-image">
+              <img src="/assets/css/img/Banner.png" alt="Planeamiento, Hábitat y Vivienda" class="hero-image">
               <div class="hero-text-overlay">
                 <h1 class="hero-title">Planeamiento, Obras Particulares y DIEPEP</h1>
               </div>
@@ -54,15 +54,15 @@
               <div class="row justify-content-center">
                 <div class="col-11 col-lg-10">
                   <!-- PLAN PARTICULARIZADO -->
-                  <b-card class="section-card shadow-card mb-3">
-                    <template #header>
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
                       <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('planeamientoPlanParticularizado')" style="cursor: pointer;">
                         <h5 class="text-green mb-0">Plan particularizado</h5>
-                        <b-icon :icon="collapseStates.planeamientoPlanParticularizado ? 'chevron-up' : 'chevron-down'"></b-icon>
+                        <i :class="collapseStates.planeamientoPlanParticularizado ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
                       </div>
-                    </template>
-                    <template #default v-if="collapseStates.planeamientoPlanParticularizado">
-                      <b-collapse :visible="collapseStates.planeamientoPlanParticularizado" class="collapse-content">
+                    </div>
+                    <div v-if="collapseStates.planeamientoPlanParticularizado" class="card-body">
+                      <div :class="['collapse-content', { 'show': collapseStates.planeamientoPlanParticularizado }]">
                         <p class="text-black text-roboto">Es el proceso destinado a la ampliación del ejido urbano a través de la subdivisión en manzanas de grandes fracciones de tierra, el proceso debe tener de un profesional con incumbencia en urbanismo.</p>
                         <p class="text-black text-roboto"><b>Requisitos:</b></p>
                         <ul class="text-roboto">
@@ -80,73 +80,73 @@
                           <li>Pago de tasa de visado para proyecto particularizado.</li>
                           <li>Cumplimento de la participación municipal en la plusvalía.</li>
                         </ul>
-                      </b-collapse>
-                    </template>
-                  </b-card>
+                      </div>
+                    </div>
+                  </div>
                   <!-- CERTIFICADO URBANISTICO -->
-                  <b-card class="section-card shadow-card mb-3">
-                    <template #header>
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
                       <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('planeamientoCertificadoUrbanistico')" style="cursor: pointer;">
                         <h5 class="text-green mb-0">Certificado urbanístico</h5>
-                        <b-icon :icon="collapseStates.planeamientoCertificadoUrbanistico ? 'chevron-up' : 'chevron-down'"></b-icon>
+                        <i :class="collapseStates.planeamientoCertificadoUrbanistico ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
                       </div>
-                    </template>
-                    <template #default v-if="collapseStates.planeamientoCertificadoUrbanistico">
-                      <b-collapse :visible="collapseStates.planeamientoCertificadoUrbanistico" class="collapse-content">
+                    </div>
+                    <div v-if="collapseStates.planeamientoCertificadoUrbanistico" class="card-body">
+                      <div :class="['collapse-content', { 'show': collapseStates.planeamientoCertificadoUrbanistico }]">
                         <p class="text-black text-roboto">Planilla emitida por la Secretaría que informa las características, indicadores y usos permitidos a un lote espécifico, el periodo de validez del mismo es de 1 año a partir de su emisión.</p>
                         <p class="text-black text-roboto"><b>Requisitos:</b></p>
                         <ul class="text-roboto">
                           <li>Acreditar titularidad.</li>
                           <li><a href="https://drive.google.com/file/d/1bi5aTktUwQHnqB5HTODNtdzhW3pTU17w/view" target="_blank" rel="noopener noreferrer">Presentar nota de solicitud.</a></li>
                         </ul>
-                      </b-collapse>
-                    </template>
-                  </b-card>
+                      </div>
+                    </div>
+                  </div>
                   <!-- PERMISO DE APERTURA DE CALLES -->
-                  <b-card class="section-card shadow-card mb-3">
-                    <template #header>
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
                       <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('planeamientoAperturaCalles')" style="cursor: pointer;">
                         <h5 class="text-green mb-0">Permiso de apertura de calles</h5>
-                        <b-icon :icon="collapseStates.planeamientoAperturaCalles ? 'chevron-up' : 'chevron-down'"></b-icon>
+                        <i :class="collapseStates.planeamientoAperturaCalles ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
                       </div>
-                    </template>
-                    <template #default v-if="collapseStates.planeamientoAperturaCalles">
-                      <b-collapse :visible="collapseStates.planeamientoAperturaCalles" class="collapse-content">
+                    </div>
+                    <div v-if="collapseStates.planeamientoAperturaCalles" class="card-body">
+                      <div :class="['collapse-content', { 'show': collapseStates.planeamientoAperturaCalles }]">
                         <p class="text-black text-roboto">Trámite destinado a la autorización del particular interesado en realizar la apertura de calles anteriormente cedidas.</p>
                         <p class="text-black text-roboto"><b>Requisitos:</b></p>
                         <ul class="text-roboto">
                           <li>Acreditar titularidad relativa a la apertura (la calle que desee abrir debe estár conectada al lote del particular interesado)</li>
                           <li><a href="https://drive.google.com/file/d/1Gxak0zFjPBOunzQXr4Zaq2Peb_DjjXzA/view" target="_blank" rel="noopener noreferrer">Presentar nota de solicitud.</a></li>
                         </ul>
-                      </b-collapse>
-                    </template>
-                  </b-card>
+                      </div>
+                    </div>
+                  </div>
                   <!-- Evaluaciones de impacto ambiental -->
-                  <b-card class="section-card shadow-card mb-3">
-                    <template #header>
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
                       <div class="d-flex justify-content-between align-items-center" style="cursor: pointer;">
                         <h5 class="text-green mb-0"><a href="https://www.gesell.gob.ar/novedad/49918/estudios-y-declaratorias-de-impacto-ambiental.html" target="_blank">Evaluaciones de impacto ambiental</a></h5>
                       </div>
-                    </template>
-                  </b-card>
+                    </div>
+                  </div>
                   <!-- Documentación  -->
-                  <b-card class="section-card shadow-card mb-3">
-                    <template #header>
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
                       <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('planeamientoDocumentacion')" style="cursor: pointer;">
                         <h5 class="text-green mb-0">Documentación</h5>
-                        <b-icon :icon="collapseStates.planeamientoDocumentacion ? 'chevron-up' : 'chevron-down'"></b-icon>
+                        <i :class="collapseStates.planeamientoDocumentacion ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
                       </div>
-                    </template>
-                    <template #default v-if="collapseStates.planeamientoDocumentacion">
-                      <b-collapse :visible="collapseStates.planeamientoDocumentacion" class="collapse-content">
+                    </div>
+                    <div v-if="collapseStates.planeamientoDocumentacion" class="card-body">
+                      <div :class="['collapse-content', { 'show': collapseStates.planeamientoDocumentacion }]">
                         <ul class="text-roboto">
                           <li><a href="https://drive.google.com/file/d/1C98Z-sC4UhKp43op5zBFl3ndqSZNa8Rk/view" target="_blank" rel="noopener noreferrer">Plan de Ordenamiento Municipal</a></li>
                           <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s0559b1c958a1437187d2b8c6ee93afc4&parId=CDFD5F6443FDC16A%21sfe2c638f43224981b71bccbc58f0c6dd&o=OneUp" target="_blank" rel="noopener noreferrer">Plano de zonas</a></li>
                           <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s2ac93a3892034e12bd747208ebbb1855&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank" rel="noopener noreferrer">Programa Mí Lote</a></li>
                         </ul>
-                      </b-collapse>
-                    </template>
-                  </b-card>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               </div>
@@ -163,88 +163,88 @@
               </div>
             </div>
             <div class="li-row importante-card col-11 col-lg-10">
-                  <b-row style="width:100%">
-                      <b-col md="2" style="padding-right: 0;">
-                          <b-icon-exclamation-circle variant="dark" font-scale="5"></b-icon-exclamation-circle>
-                      </b-col>
-                      <b-col md="10" style="padding-left: 0;">
+                  <div class="row" style="width:100%">
+                      <div class="col-md-2" style="padding-right: 0;">
+                          <i class="bi bi-exclamation-circle text-dark" style="font-size: 5rem;"></i>
+                      </div>
+                      <div class="col-md-10" style="padding-left: 0;">
                           <p class="subtitle"><b>IMPORTANTE!</b></p>
                           <p>Si considerás construir, consultá previamente a un profesional matriculado (arquitecto, ingeniero o maestro mayor de obras), ya que ellos son los únicos capacitados para interpretar y aplicar el Código de Edificación y Planificación Urbana.
 Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión de obras.</p>
-                      </b-col>
-                  </b-row>
+                      </div>
+                  </div>
               </div>
             <div class="cards-section">
               <div class="row justify-content-center">
                 <div class="col-11 col-lg-10">
               <!-- ¿Cómo matricularse como profesional? -->
-              <b-card class="section-card shadow-card mb-3">
-                <template #header>
+              <div class="card section-card shadow-card mb-3">
+                <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('obrasParticularesMatricula')" style="cursor: pointer;">
                     <h5 class="text-green mb-0">¿Cómo matricularse como profesional?</h5>
-                    <b-icon :icon="collapseStates.obrasParticularesMatricula ? 'chevron-up' : 'chevron-down'"></b-icon>
+                    <i :class="collapseStates.obrasParticularesMatricula ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
                   </div>
-                </template>
-                <template #default v-if="collapseStates.obrasParticularesMatricula">
-                  <b-collapse :visible="collapseStates.obrasParticularesMatricula" class="collapse-content">
+                </div>
+                <div v-if="collapseStates.obrasParticularesMatricula" class="card-body">
+                  <div :class="['collapse-content', { 'show': collapseStates.obrasParticularesMatricula }]">
                     <p class="text-black text-roboto">El trámite se realiza de forma presencial en nuestra oficina. Debe traer:</p>
                     <ul class="text-roboto">
                       <li>Comprobante de Matrícula Provincial al día</li>
                       <li>Fotocopia de DNI.</li>
                     </ul>
                     <p class="text-black text-roboto">Se le pedirá <b> abonar Inscripción Profesional y Matrícula Municipal Anual. </b> El número de Matrícula Municipal le será otorgado en el momento.<b> Recuerde que para cualquier presentación debe tener la matrícula municipal al día.</b></p>
-                  </b-collapse>
-                </template>
-              </b-card>
+                  </div>
+                </div>
+              </div>
 
               <!-- Solicitud de Copia de Plano -->
-              <b-card class="section-card shadow-card mb-3">
-                <template #header>
+              <div class="card section-card shadow-card mb-3">
+                <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('obrasParticularesSolicitud')" style="cursor: pointer;">
                     <h5 class="text-green mb-0">Solicitud de Copia de Plano</h5>
-                    <b-icon :icon="collapseStates.obrasParticularesSolicitud ? 'chevron-up' : 'chevron-down'"></b-icon>
+                    <i :class="collapseStates.obrasParticularesSolicitud ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
                   </div>
-                </template>
-                <template #default v-if="collapseStates.obrasParticularesSolicitud">
-                  <b-collapse :visible="collapseStates.obrasParticularesSolicitud" class="collapse-content">
+                </div>
+                <div v-if="collapseStates.obrasParticularesSolicitud" class="card-body">
+                  <div :class="['collapse-content', { 'show': collapseStates.obrasParticularesSolicitud }]">
                     <ul class="text-roboto">
                     <li>Para solicitar copia de planos aprobados o registrados, el propietario del inmueble
                        deberá requerirlo por mesa de entradas de la Dirección acreditando titularidad por medio de
                         escritura y DNI.</li>
                     <li>La copia del plano tiene un costo que se informará y abonará en el momento por el propietario. Posteriormente se le entregará hasta una semana después.</li>
                     </ul>
-                  </b-collapse>
-                </template>
-              </b-card>
+                  </div>
+                </div>
+              </div>
 
               <!-- Horarios de Trabajo de Obra -->
-              <b-card class="section-card shadow-card mb-3">
-                <template #header>
+              <div class="card section-card shadow-card mb-3">
+                <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('obrasParticularesHorarios')" style="cursor: pointer;">
                     <h5 class="text-green mb-0">Horarios de Trabajo de Obra</h5>
-                    <b-icon :icon="collapseStates.obrasParticularesHorarios ? 'chevron-up' : 'chevron-down'"></b-icon>
+                    <i :class="collapseStates.obrasParticularesHorarios ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
                   </div>
-                </template>
-                <template #default v-if="collapseStates.obrasParticularesHorarios">
-                  <b-collapse :visible="collapseStates.obrasParticularesHorarios" class="collapse-content">
+                </div>
+                <div v-if="collapseStates.obrasParticularesHorarios" class="card-body">
+                  <div :class="['collapse-content', { 'show': collapseStates.obrasParticularesHorarios }]">
                     <p class="text-black text-roboto">Los horarios de trabajo de obra están regulados por la
                     <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21sd9f1f92abc534e9e88d3db0c0b7bb69f&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank"><u>Ordenanza 3494/24</u></a>
                        y varían según la zona y época.</p>
-                  </b-collapse>
-                </template>
-              </b-card>
+                  </div>
+                </div>
+              </div>
 
               <!-- Documentación -->
-              <b-card class="section-card shadow-card mb-3 documentacion-card">
-                <template #header>
+              <div class="card section-card shadow-card mb-3 documentacion-card">
+                <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('obrasParticularesDocumentacion')" style="cursor: pointer;">
                     <h5 class="text-green mb-0">Documentación</h5>
-                    <b-icon :icon="collapseStates.obrasParticularesDocumentacion ? 'chevron-up' : 'chevron-down'"></b-icon>
+                    <i :class="collapseStates.obrasParticularesDocumentacion ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
                   </div>
-                </template>
-                <template #default v-if="collapseStates.obrasParticularesDocumentacion">
-                  <b-collapse :visible="collapseStates.obrasParticularesDocumentacion" class="collapse-content">
-                    <h6 class="text-dark font-weight-bold text-roboto">Códigos y ordenanzas</h6>
+                </div>
+                <div v-if="collapseStates.obrasParticularesDocumentacion" class="card-body">
+                  <div :class="['collapse-content', { 'show': collapseStates.obrasParticularesDocumentacion }]">
+                    <h6 class="text-dark fw-bold text-roboto">Códigos y ordenanzas</h6>
                     <ul class="text-roboto">
                       <li><a href="https://drive.google.com/file/d/1C98Z-sC4UhKp43op5zBFl3ndqSZNa8Rk/view" target="_blank" rel="noopener noreferrer">Plan de Ordenamiento Municipal</a></li>
                       <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s845dc44950f04c3c9b14b7c448a0a976&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank" rel="noopener noreferrer">Ordenanza de presentaciones y procedimientos municipales 961/92</a></li>
@@ -258,21 +258,21 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
                       <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VzXzVTcUw0SEJCQmo5dE9VSGlUMWFVQlliTGpHTHNOM3lDN1NhWkVybWNDU1E&id=CDFD5F6443FDC16A%21s5e622e63d09b4cd786d34a5f3ef3e15e&cid=CDFD5F6443FDC16A&sb=name&sd=1&v=validatepermission" target="_blank" rel="noopener noreferrer">Ordenanzas Veredas</a></li>
                     </ul>
                     
-                    <h6 class="text-dark font-weight-bold text-roboto">Multas</h6>
+                    <h6 class="text-dark fw-bold text-roboto">Multas</h6>
                     <ul class="text-roboto">
                       <li>Ordenanzas de multas (Ord. 931/91 – <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21scbb8e9406658439fbecfbd6dd2457b4f&parId=CDFD5F6443FDC16A%21s3f16db73217249318a969ea2fdbb1bf6&o=OneUp" target="_blank" rel="noopener noreferrer">2283/09</a> – 2243/17 – 2708/17 – <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21s761e9b92a43242f08077edf5228ebd89&parId=CDFD5F6443FDC16A%21s3f16db73217249318a969ea2fdbb1bf6&o=OneUp" target="_blank" rel="noopener noreferrer">2742/17</a> – <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21s7347a6b25f004d01980ea5e844ca9c95&parId=CDFD5F6443FDC16A%21s3f16db73217249318a969ea2fdbb1bf6&o=OneUp" target="_blank" rel="noopener noreferrer">3325/22</a>)</li>
                       <!-- <li>Planilla de liquidación de multas</li> -->
                     </ul>
                     
-                    <h6 class="text-dark font-weight-bold text-roboto">Permisos y Avisos de obra</h6>
+                    <h6 class="text-dark fw-bold text-roboto">Permisos y Avisos de obra</h6>
                     <ul class="text-roboto">
                       <li>Planillas y requisitos para presentación</li>
                       <li>Planilla Movimiento de suelos</li>
                       <li>Planilla extracción de arboles</li>
                     </ul>
-                  </b-collapse>
-                </template>
-              </b-card>
+                  </div>
+                </div>
+              </div>
                 </div>
               </div>
             </div>
@@ -290,23 +290,23 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
               <div class="row justify-content-center">
                 <div class="col-11 col-lg-10">
                   <!-- Documentación  -->
-                  <b-card class="section-card shadow-card mb-3">
-                    <template #header>
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
                       <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('diepepDocumentacion')" style="cursor: pointer;">
                         <h5 class="text-green mb-0">Documentación</h5>
-                        <b-icon :icon="collapseStates.diepepDocumentacion ? 'chevron-up' : 'chevron-down'"></b-icon>
+                        <i :class="collapseStates.diepepDocumentacion ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
                       </div>
-                    </template>
-                    <template #default v-if="collapseStates.diepepDocumentacion">
-                      <b-collapse :visible="collapseStates.diepepDocumentacion" class="collapse-content">
+                    </div>
+                    <div v-if="collapseStates.diepepDocumentacion" class="card-body">
+                      <div :class="['collapse-content', { 'show': collapseStates.diepepDocumentacion }]">
                         <ul class="text-roboto">
                           <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VwdGFwc2Y2YU54T3BTd3V5VENqSndjQkhIb2dMeHdyUWl3SFhUd3dyeGFRX3c&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s2fd36b6e8f9e4e309febce56b2cd99fa&parId=CDFD5F6443FDC16A%21sc7a65a9b68fa4edca52c2ec930a32707&o=OneUp" target="_blank" rel="noopener noreferrer">Ord. 1847/02</a></li>
                           <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VwdGFwc2Y2YU54T3BTd3V5VENqSndjQkhIb2dMeHdyUWl3SFhUd3dyeGFRX3c&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s2253d9787dc848969727fb40b9302cdd&parId=CDFD5F6443FDC16A%21sc7a65a9b68fa4edca52c2ec930a32707&o=OneUp" target="_blank" rel="noopener noreferrer">Ord. 3264/22 </a></li>
                           <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VwdGFwc2Y2YU54T3BTd3V5VENqSndjQkhIb2dMeHdyUWl3SFhUd3dyeGFRX3c&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s725488758bf54454a961723e94c89c05&parId=CDFD5F6443FDC16A%21sc7a65a9b68fa4edca52c2ec930a32707&o=OneUp" target="_blank" rel="noopener noreferrer">Decreto Reglamentario 142/20</a></li>
                         </ul>
-                      </b-collapse>
-                    </template>
-                  </b-card>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               </div>
@@ -321,34 +321,34 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Secretaría de Planeamiento, Obras y <br/> Servicios Públicos</h6>
                     <p class="small text-muted text-roboto">
-                      <b-icon icon="geo-alt-fill"/> Avenida 6 N.° 660<br>
-                    <b-icon icon="telephone-fill"/> (2255) 46-7923<br>
-                    <b-icon icon="clock-fill"/> Lunes a Viernes de 8 a 14<br>
-                    <b-icon icon="envelope-fill"/> planeamiento@gesell.gob.ar</p>
+                      <i class="bi bi-geo-alt-fill"></i> Avenida 6 N.° 660<br>
+                    <i class="bi bi-telephone-fill"></i> (2255) 46-7923<br>
+                    <i class="bi bi-clock-fill"></i> Lunes a Viernes de 8 a 14<br>
+                    <i class="bi bi-envelope-fill"></i> planeamiento@gesell.gob.ar</p>
                   </div>
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Dirección Obras Particulares (D.O.P.)</h6>
                     <p class="small text-muted text-roboto">
-                      <b-icon icon="geo-alt-fill"/> Avenida 3 N.º 820 1 piso<br>
-                    <b-icon icon="telephone-fill"/> (2255) 47-8044<br>
-                    <b-icon icon="clock-fill"/> Lunes a Viernes de 8 a 14<br>
-                    <b-icon icon="envelope-fill"/> obrasparticulares@gesell.gob.ar</p>
+                      <i class="bi bi-geo-alt-fill"></i> Avenida 3 N.º 820 1 piso<br>
+                    <i class="bi bi-telephone-fill"></i> (2255) 47-8044<br>
+                    <i class="bi bi-clock-fill"></i> Lunes a Viernes de 8 a 14<br>
+                    <i class="bi bi-envelope-fill"></i> obrasparticulares@gesell.gob.ar</p>
                   </div>
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Dirección de Inspección de <br/> Edificios Privados y Espacios Públicos (D.I.E.P.E.P.)</h6>
                     <p class="small text-muted text-roboto">
-                      <b-icon icon="geo-alt-fill"/> Avenida 6 N°660<br>
-                    <b-icon icon="telephone-fill"/> (2255) 45-4483<br>
-                    <b-icon icon="clock-fill"/> Lunes a Viernes de 8 a 14<br>
-                    <b-icon icon="envelope-fill"/> dirinspyfachadabalcones@gesell.gob.ar</p>
+                      <i class="bi bi-geo-alt-fill"></i> Avenida 6 N°660<br>
+                    <i class="bi bi-telephone-fill"></i> (2255) 45-4483<br>
+                    <i class="bi bi-clock-fill"></i> Lunes a Viernes de 8 a 14<br>
+                    <i class="bi bi-envelope-fill"></i> dirinspyfachadabalcones@gesell.gob.ar</p>
                   </div>
                   <div class="col-md-3 mb-3">
                     <h6 class="text-black text-roboto">Secretaría de Hábitat</h6>
                     <p class="small text-muted text-roboto">
-                      <b-icon icon="geo-alt-fill"/> Avenida 5 N°522<br>
-                    <b-icon icon="telephone-fill"/> (2255) 47-8240<br>
-                    <b-icon icon="clock-fill"/> Lunes a Viernes de 8 a 14<br>
-                    <b-icon icon="envelope-fill"/> habitat@gesell.gob.ar</p>
+                      <i class="bi bi-geo-alt-fill"></i> Avenida 5 N°522<br>
+                    <i class="bi bi-telephone-fill"></i> (2255) 47-8240<br>
+                    <i class="bi bi-clock-fill"></i> Lunes a Viernes de 8 a 14<br>
+                    <i class="bi bi-envelope-fill"></i> habitat@gesell.gob.ar</p>
                   </div>
                 </div>
               </div>
@@ -361,74 +361,68 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
   </div>
 </template>
 
-<script>
-export default {
-  name: 'IndexPage',
-  data() {
-    return {
-      selectedOption: null,
-      expandedCards: [],
-      collapseStates: {
-        planeamientoPlanParticularizado: false,
-        planeamientoCertificadoUrbanistico: false,
-        planeamientoAperturaCalles: false,
-        planeamientoDocumentacion: false,
-        obrasParticularesMatricula:false,
-        obrasParticularesSolicitud: false,
-        obrasParticularesHorarios: false,
-        obrasParticularesDocumentacion: false,
-        diepepDocumentacion:false,
-      },
-    }
-  },
-  methods: {
-    selectOption(option) {
-      // Si se hace clic en el mismo botón que ya está seleccionado, deseleccionarlo
-      if (this.selectedOption === option) {
-        this.selectedOption = null;
-        console.log('Botón deseleccionado - volviendo al estado inicial');
-      } else {
-        this.selectedOption = option;
-        console.log(`Opción seleccionada: ${option}`);
-        
-        // Scroll suave hacia la sección correspondiente
-        this.$nextTick(() => {
-          const sectionMap = {
-            1: '.section', // Para PLANEAMIENTO, HÁBITAT Y VIVIENDA
-            2: '.obras-section', // Para OBRAS PARTICULARES
-            3: '.section' // Para D.I.E.P.E.P.
-          };
-          
-          const targetSelector = sectionMap[option];
-          if (targetSelector) {
-            const targetElement = document.querySelector(targetSelector);
-            if (targetElement) {
-              targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }
-          }
-        });
-      }
-    },
-    
-    toggleCard(cardIndex) {
-      if (this.expandedCards.includes(cardIndex)) {
-        this.expandedCards = this.expandedCards.filter((index) => index !== cardIndex);
-      } else {
-        this.expandedCards.push(cardIndex);
-      }
-    },
-    
-    isCardExpanded(cardIndex) {
-      return this.expandedCards.includes(cardIndex);
-    },
+<script setup>
+import { ref, nextTick } from 'vue'
 
-    toggleCollapse(section) {
-      this.collapseStates[section] = !this.collapseStates[section];
-    }
+const selectedOption = ref(null)
+const expandedCards = ref([])
+const collapseStates = ref({
+  planeamientoPlanParticularizado: false,
+  planeamientoCertificadoUrbanistico: false,
+  planeamientoAperturaCalles: false,
+  planeamientoDocumentacion: false,
+  obrasParticularesMatricula: false,
+  obrasParticularesSolicitud: false,
+  obrasParticularesHorarios: false,
+  obrasParticularesDocumentacion: false,
+  diepepDocumentacion: false,
+})
+
+const selectOption = (option) => {
+  // Si se hace clic en el mismo botón que ya está seleccionado, deseleccionarlo
+  if (selectedOption.value === option) {
+    selectedOption.value = null
+    console.log('Botón deseleccionado - volviendo al estado inicial')
+  } else {
+    selectedOption.value = option
+    console.log(`Opción seleccionada: ${option}`)
+    
+    // Scroll suave hacia la sección correspondiente
+    nextTick(() => {
+      const sectionMap = {
+        1: '.section', // Para PLANEAMIENTO, HÁBITAT Y VIVIENDA
+        2: '.obras-section', // Para OBRAS PARTICULARES
+        3: '.section' // Para D.I.E.P.E.P.
+      }
+      
+      const targetSelector = sectionMap[option]
+      if (targetSelector) {
+        const targetElement = document.querySelector(targetSelector)
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+        }
+      }
+    })
   }
+}
+
+const toggleCard = (cardIndex) => {
+  if (expandedCards.value.includes(cardIndex)) {
+    expandedCards.value = expandedCards.value.filter((index) => index !== cardIndex)
+  } else {
+    expandedCards.value.push(cardIndex)
+  }
+}
+
+const isCardExpanded = (cardIndex) => {
+  return expandedCards.value.includes(cardIndex)
+}
+
+const toggleCollapse = (section) => {
+  collapseStates.value[section] = !collapseStates.value[section]
 }
 </script>
 
@@ -702,7 +696,7 @@ a{
   color: #505050;
 }
 
-.contact-section .small .b-icon {
+.contact-section .small .bi {
   color: #bbbbbb;
   margin-right: 0.5rem;
   font-size: 1rem;

@@ -1,5 +1,5 @@
 <template>
-  <button 
+  <button
     :class="{ 'main-button--active': isActive }"
     @click="$emit('click')"
     class="main-button"
@@ -8,17 +8,15 @@
   </button>
 </template>
 
-<script>
-export default {
-  name: 'MainButton',
-  props: {
-    isActive: {
-      type: Boolean,
-      default: false
-    }
-  },
-  emits: ['click']
-}
+<script setup>
+defineProps({
+  isActive: {
+    type: Boolean,
+    default: false
+  }
+})
+
+defineEmits(['click'])
 </script>
 
 <style scoped>
@@ -59,4 +57,4 @@ export default {
   transform: translateY(-1px) !important;
   box-shadow: 0 2px 4px rgba(255, 107, 0, 0.4) !important;
 }
-</style> 
+</style>

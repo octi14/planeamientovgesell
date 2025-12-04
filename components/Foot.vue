@@ -1,7 +1,7 @@
 <template>
   <div class="footer bg-success text-light py-1">
     <div class="container">
-      <div class="row no-gutters">
+      <div class="row g-0">
         <div class="mx-auto" style="text-align:center">
           <p>2025 - Municipalidad de Villa Gesell  </p>
           <!-- <p> <b-icon-telephone scale="0.9"/> Sec. Hacienda: (02255) 478073</p> -->
