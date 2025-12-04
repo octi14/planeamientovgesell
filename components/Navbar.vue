@@ -6,9 +6,9 @@
       </a>
       <!-- <a class="ml-2 separador" > | </a> -->
     </div>
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+    <!-- <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav class="m-2" style="width:90%">
-    </b-collapse>
+    </b-collapse> -->
   </b-navbar>
 </template>
 
