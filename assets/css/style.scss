@@ -1,31 +1,8 @@
 // Importar variables del proyecto
 @import "./variables";
 
-// Importar Bootstrap completo
-@import "~bootstrap/scss/bootstrap";
-
-// Habilitar todas las utilidades de Bootstrap
-$enable-utilities: true;
-
-// Clases para el color de estado
-.estado-danger {
-  color: $danger;
-}
-
-$pagination-bg: $success;
-$pagination-disabled-bg: rgba($success, .5);
-$pagination-border-color: $success;
-$pagination-hover-bg: rgba($secondary, .5);
-$pagination-active-bg: $secondary;
-
-$dropdown-bg: $success;
-$dropdown-link-color: $white;
-
-// Importar Bootswatch después de Bootstrap
-// @import "~bootswatch/dist/minty/bootswatch";
-
-// Importar Bootstrap-Vue
-@import "~bootstrap-vue/src/index.scss";
+// Importar Bootstrap 5 completo
+@import "bootstrap/scss/bootstrap";
 
 // Importar estilos personalizados al final
 @import "./custom"; 

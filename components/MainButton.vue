@@ -8,17 +8,15 @@
   </button>
 </template>
 
-<script>
-export default {
-  name: 'MainButton',
-  props: {
-    isActive: {
-      type: Boolean,
-      default: false
-    }
-  },
-  emits: ['click']
-}
+<script setup>
+defineProps({
+  isActive: {
+    type: Boolean,
+    default: false
+  }
+})
+
+defineEmits(['click'])
 </script>
 
 <style scoped>
