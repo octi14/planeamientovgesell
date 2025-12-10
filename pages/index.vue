@@ -165,11 +165,11 @@
               <div class="col-11 col-lg-10">
                 <div class="importante-card">
                   <div class="row" style="width:100%">
-                    <div class="col-md-2" style="padding-right: 0;">
-                      <i class="bi bi-exclamation-circle" style="font-size: 3rem; color: #353535;"></i>
+                    <div class="col-md-2">
+                      <i class="bi bi-exclamation-circle"></i>
                     </div>
-                    <div class="col-md-10" style="padding-left: 0;">
-                      <p class="subtitle"><b>IMPORTANTE!</b></p>
+                    <div class="col-md-10">
+                      <p class="subtitle"><b>IMPORTANTE</b></p>
                       <p>Si considerás construir, consultá previamente a un profesional matriculado (arquitecto, ingeniero o maestro mayor de obras), ya que ellos son los únicos capacitados para interpretar y aplicar el Código de Edificación y Planificación Urbana.
 Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión de obras.</p>
                     </div>
@@ -289,6 +289,22 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
               <div class="col-11 col-lg-10">
                 <h3 class="text-green mb-4 mt-5">NUESTRA LABOR</h3>
                 <p class="text-roboto">La Dirección de Inspección de Edificios Privados y Espacios Públicos (DIEPEP) es el área encargada de otorgar permisos de obra de mantenimiento de fachadas de edificios y del control de la aplicación de las ordenanza de inspección, conservación y mantenimiento de marquesinas, carteles, ascensores y montacargas.</p>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-11 col-lg-10">
+                <div class="importante-card">
+                  <div class="row" style="width:100%">
+                    <div class="col-md-2">
+                      <i class="bi bi-exclamation-circle"></i>
+                    </div>
+                    <div class="col-md-10">
+                      <p class="subtitle"><b>IMPORTANTE</b></p>
+                      <p>Si considerás construir, consultá previamente a un profesional matriculado (arquitecto, ingeniero o maestro mayor de obras), ya que ellos son los únicos capacitados para interpretar y aplicar el Código de Edificación y Planificación Urbana.
+Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión de obras.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="cards-section">
@@ -652,7 +668,7 @@ a{
 .importante-card {
   min-width: 80% !important;
   background-color: #FACD8A;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 1rem;
   padding-bottom: 2rem;
   margin: 1rem auto 0;
@@ -673,10 +689,25 @@ a{
   color: #353535;
 }
 
+/* Estilos para desktop - ícono y espaciado */
+.importante-card .col-md-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 1.5rem !important;
+}
+
+.importante-card .col-md-10 {
+  padding-left: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .importante-card .bi-exclamation-circle {
-  margin-left: 20%;
-  margin-top: 10%;
-  text-align: center;
+  font-size: 3.5rem;
+  color: #353535;
+  flex-shrink: 0;
 }
 
 /* Responsive para el texto hero */
@@ -718,30 +749,38 @@ a{
   .importante-card p {
     font-size: 18px !important;
   }
-  .importante-card .bi-exclamation-circle {
-    margin-left: 20%;
-    margin-top: 10%;
-    text-align: center;
-  }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
+  .importante-card {
+    padding: 1rem;
+  }
+  
   .importante-card p {
     font-size: 18px !important;
     text-align: center;
   }
+  
   .importante-card .row {
     text-align: center !important;
     margin: 0 auto !important;
   }
-  .importante-card .col-md-2, .importante-card .col-md-10 {
+  
+  .importante-card .col-md-2 {
     padding-right: 0 !important;
     padding-left: 0 !important;
+    justify-content: center !important;
+    margin-bottom: 1rem;
   }
+  
+  .importante-card .col-md-10 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
   .importante-card .bi-exclamation-circle {
-    margin-left: 0;
-    margin-top: 10%;
-    text-align: center;
+    font-size: 3rem !important;
+    margin-top: 0 !important;
   }
 }
 </style>

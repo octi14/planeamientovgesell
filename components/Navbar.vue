@@ -5,9 +5,6 @@
         <img src="https://arvige.gob.ar/assets/img/header.png" style="height: 58px; width: 42px" loading="lazy" alt="Logo Villa Gesell">
       </a>
     </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-collapse" aria-controls="nav-collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse m-2" id="nav-collapse" style="width:90%">
     </div>
   </nav>
