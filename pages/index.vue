@@ -18,19 +18,28 @@
           <div class="btn-section">
             <div class="text-center">
               <h3 class="text-green mb-5 mt-5">¿Qué trámite estás buscando?</h3>
+
               <div class="row justify-content-center">
-                <div class="col-12 col-md-3 mb-4 mx-4">
-                  <MainButton :isActive="selectedOption === 1" @click="selectOption(1)">
-                    PLANEAMIENTO,<br>HÁBITAT Y VIVIENDA
+                <div class="col-12 col-md-6 col-lg-3 mb-3 d-flex">
+                  <MainButton class="w-100" :isActive="selectedOption === 1" @click="selectOption(1)">
+                    PLANEAMIENTO
                   </MainButton>
                 </div>
-                <div class="col-12 col-md-3 mb-4 mx-4">
-                  <MainButton :isActive="selectedOption === 2" @click="selectOption(2)">
-                    OBRAS PARTICULARES
+
+                <div class="col-12 col-md-6 col-lg-3 mb-3 d-flex">
+                  <MainButton class="w-100" :isActive="selectedOption === 2" @click="selectOption(2)">
+                    HÁBITAT Y VIVIENDA
                   </MainButton>
                 </div>
-                <div class="col-12 col-md-3 mb-4 mx-4">
-                  <MainButton :isActive="selectedOption === 3" @click="selectOption(3)">
+
+                <div class="col-12 col-md-6 col-lg-3 mb-3 d-flex">
+                  <MainButton class="w-100" :isActive="selectedOption === 3" @click="selectOption(3)">
+                    DIRECCIÓN DE <br />OBRAS PARTICULARES
+                  </MainButton>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 mb-3 d-flex">
+                  <MainButton class="w-100" :isActive="selectedOption === 4" @click="selectOption(4)">
                     D. I. E. P. E. P.
                   </MainButton>
                 </div>
@@ -38,15 +47,14 @@
             </div>
           </div>
 
-          <!-- Vista del Botón 1: PLANEAMIENTO, HÁBITAT Y VIVIENDA -->
+          <!-- Vista del Botón 1: PLANEAMIENTO -->
           <div v-if="selectedOption === 1">
             <!-- NUESTRA LABOR Section -->
             <div class="section">
               <div class="row justify-content-center">
                 <div class="col-11 col-lg-10">
                   <h3 class="text-green mb-4 mt-5">NUESTRA LABOR</h3>
-                  <p class="text-roboto">La Dirección de Vivienda y Hábitat fue creada en el 2015 con el objetivo de atender la demanda habitacional, mediante la ejecución de obras de urbanización, infraestructura y equipamiento, asegurando el acceso a una vivienda digna en igualdad de oportunidades para los distintos sectores sociales, con el fin de constituir un hábitat digno, dotado de servicios y sin riesgo ambiental que contribuya al desarrollo de nuestro Partido mejorando o transformando así sus condiciones de vida.</p>
-                  <p class="text-roboto">Asimismo, se trabaja en forma conjunta con la Escribanía General de Gobierno y la Subsecretaría Social de Tierras, Urbanismo y Vivienda en la regularización dominial de inmuebles.</p>
+                  <p class="text-roboto">La Secretaría de Planeamiento, es el área encargada de la planificación estratégica, urbana y territorial, diseñando políticas, proyectos y obras para el desarrollo ordenado de una ciudad o región, coordinando con Obras Públicas, y gestionando el uso del suelo, infraestructura y servicios, buscando el crecimiento sostenible y la mejora de la calidad de vida en un todo de acuerdo con el Plan de Ordenamiento Municipal (POM). De ella dependen, entre otras, la Dirección de Obras Particulares, la Dirección de Hábitat y la Dirección de Inspección de Edificios Privados y Espacios Públicos.</p>
                 </div>
               </div>
               
@@ -57,7 +65,7 @@
                     <div class="card section-card shadow-card mb-3">
                       <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('planeamientoPlanParticularizado')" style="cursor: pointer;" data-bs-toggle="collapse" :data-bs-target="'#collapse-planeamientoPlanParticularizado'" aria-expanded="false" :aria-controls="'collapse-planeamientoPlanParticularizado'">
-                          <h5 class="text-green mb-0">Plan particularizado</h5>
+                          <h5 class="text-green mb-0">Proyecto particularizado</h5>
                           <i :class="collapseStates.planeamientoPlanParticularizado ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
                         </div>
                       </div>
@@ -124,8 +132,16 @@
                     <!-- Evaluaciones de impacto ambiental -->
                     <div class="card section-card shadow-card mb-3">
                       <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-center" style="cursor: pointer;">
-                          <h5 class="text-green mb-0"><a href="https://www.gesell.gob.ar/novedad/49918/estudios-y-declaratorias-de-impacto-ambiental.html" target="_blank">Evaluaciones de impacto ambiental</a></h5>
+                        <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('planeamientoEvaluacionesImpactoAmbiental')" style="cursor: pointer;" data-bs-toggle="collapse" :data-bs-target="'#collapse-planeamientoEvaluacionesImpactoAmbiental'" aria-expanded="false" :aria-controls="'collapse-planeamientoEvaluacionesImpactoAmbiental'">
+                          <h5 class="text-green mb-0">Evaluaciones de Impacto Ambiental</h5>
+                          <i :class="collapseStates.planeamientoEvaluacionesImpactoAmbiental ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                        </div>
+                      </div>
+                      <div v-if="collapseStates.planeamientoEvaluacionesImpactoAmbiental" class="collapse-content collapse" :class="{ show: collapseStates.planeamientoEvaluacionesImpactoAmbiental }" id="collapse-planeamientoEvaluacionesImpactoAmbiental">
+                        <div class="card-body">
+                          <ul class="text-roboto">
+                            <li>Las evaluaciones y declaratorias de impacto ambiental pueden ser consultadas haciendo click <a href="https://www.gesell.gob.ar/novedad/49918/estudios-y-declaratorias-de-impacto-ambiental.html" target="_blank" rel="noopener noreferrer">aquí</a></li>
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -142,7 +158,7 @@
                           <ul class="text-roboto">
                             <li><a href="https://drive.google.com/file/d/1C98Z-sC4UhKp43op5zBFl3ndqSZNa8Rk/view" target="_blank" rel="noopener noreferrer">Plan de Ordenamiento Municipal</a></li>
                             <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s0559b1c958a1437187d2b8c6ee93afc4&parId=CDFD5F6443FDC16A%21sfe2c638f43224981b71bccbc58f0c6dd&o=OneUp" target="_blank" rel="noopener noreferrer">Plano de zonas</a></li>
-                            <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s2ac93a3892034e12bd747208ebbb1855&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank" rel="noopener noreferrer">Programa Mí Lote</a></li>
+                            <li><a href="https://hcdvillagesell.com.ar/wp-content/uploads/2023/07/3228-3360-PLANES-DE-PAGO-LOTES-CON-SERVICIO.pdf" target="_blank" rel="noopener noreferrer">Programa de Adjudicación de Lotes con Servicios Ord. 3360/23</a></li>
                           </ul>
                         </div>
                       </div>
@@ -153,8 +169,75 @@
             </div>
           </div>
 
-          <!-- Vista del Botón 2: OBRAS PARTICULARES -->
+          <!-- Vista del Botón 2: HABITAT -->
           <div v-if="selectedOption === 2" class="section">
+            <div class="row justify-content-center">
+              <div class="col-11 col-lg-10">
+              <h3 class="text-green mb-4 mt-5">NUESTRA LABOR</h3>
+              <p class="text-roboto">La Dirección de Vivienda y Hábitat fue creada en el 2015 con el objetivo de atender la demanda habitacional, mediante la ejecución de obras de urbanización, infraestructura y equipamiento, asegurando el acceso a una vivienda digna en igualdad de oportunidades para los distintos sectores sociales, con el fin de constituir un hábitat digno, dotado de servicios y sin riesgo ambiental que contribuya al desarrollo de nuestro Partido mejorando o transformando así sus condiciones de vida.</p>
+              <p class="text-roboto">Asimismo, se trabaja en forma conjunta con la Escribanía General de Gobierno y la Subsecretaría Social de Tierras, Urbanismo y Vivienda en la regularización dominial de inmuebles.</p>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-11 col-lg-10">
+                <div class="importante-card">
+                  <div class="row" style="width:100%">
+                    <div class="col-md-2">
+                      <i class="bi bi-exclamation-circle"></i>
+                    </div>
+                    <div class="col-md-10">
+                      <p class="subtitle"><b>IMPORTANTE</b></p>
+                      <p>Si considerás construir, consultá previamente a un profesional matriculado (arquitecto, ingeniero o maestro mayor de obras), ya que ellos son los únicos capacitados para interpretar y aplicar el Código de Edificación y Planificación Urbana.
+Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión de obras.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cards-section">
+              <div class="row justify-content-center">
+                <div class="col-11 col-lg-10">
+                  <!-- Inscripción al Programa de Lotes con Servicios -->
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
+                      <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('insctipcionLotesServicios')" style="cursor: pointer;" data-bs-toggle="collapse" :data-bs-target="'#collapse-insctipcionLotesServicios'" aria-expanded="false" :aria-controls="'collapse-insctipcionLotesServicios'">
+                        <h5 class="text-green mb-0">Inscripción al Programa de Lotes con Servicios</h5>
+                        <i :class="collapseStates.insctipcionLotesServicios ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                      </div>
+                    </div>
+                    <div v-if="collapseStates.insctipcionLotesServicios" class="collapse-content collapse" :class="{ show: collapseStates.insctipcionLotesServicios }" id="collapse-insctipcionLotesServicios">
+                      <div class="card-body">
+                        <p class="text-black text-roboto">La inscripción al Programa de Lotes con Servicios se hace en la Dirección de Hábitat o donde ésta informe oportunamente.</p>
+                        <p class="text-black text-roboto">Para más información realizá tu consulta por teléfono (2255) 47-8240, enviando un correo electrónico a habitat@gesell.gob.ar o acercándote personalmente a la oficina correspondiente.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Documentación -->
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
+                      <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('documentación')" style="cursor: pointer;" data-bs-toggle="collapse" :data-bs-target="'#collapse-documentación'" aria-expanded="false" :aria-controls="'collapse-documentación'">
+                        <h5 class="text-green mb-0">Documentación</h5>
+                        <i :class="collapseStates.documentación ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                      </div>
+                    </div>
+                    <div v-if="collapseStates.documentación" class="collapse-content collapse" :class="{ show: collapseStates.documentación }" id="collapse-documentación">
+                      <div class="card-body">
+                        <ul class="text-roboto">
+                          <li>Programa de Adjudicación de Lotes con Servicios <a href="https://hcdvillagesell.com.ar/wp-content/uploads/2023/07/3228-3360-PLANES-DE-PAGO-LOTES-CON-SERVICIO.pdf" target="_blank">Ord. 3360/23</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Vista del Botón 3: OBRAS PARTICULARES -->
+          <div v-if="selectedOption === 3" class="section">
             <div class="row justify-content-center">
               <div class="col-11 col-lg-10">
               <h3 class="text-green mb-4 mt-5">NUESTRA LABOR</h3>
@@ -258,8 +341,8 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
                       <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy9DREZENUY2NDQzRkRDMTZBL0ViaVRBX1E0eHg5TG0xOUw3WERScWt3QkVJVkhOSko4TThmRmlXX2VIdW1ScWc&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21sf40393b8c7384b1f9b5f4bed70d1aa4c&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank" rel="noopener noreferrer">Resolución para Alojamientos Turísticos (Res. 23/14)</a></li>
                       <li>Valores vigentes de Tasa de Visado y Multas</li>
                       <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s7f8ca017b1cd493f852bb85704621bf8&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank" rel="noopener noreferrer">Visado Web y Planilla de Visado (Decreto 662/24)</a></li>
-                      <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s2ac93a3892034e12bd747208ebbb1855&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank" rel="noopener noreferrer">Programa MI LOTE y presentación Municipal</a></li>
-                      <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VzXzVTcUw0SEJCQmo5dE9VSGlUMWFVQlliTGpHTHNOM3lDN1NhWkVybWNDU1E&id=CDFD5F6443FDC16A%21s3ffb686bc57d488fb432faef73827619&cid=CDFD5F6443FDC16A&sb=name&sd=1&v=validatepermission" target="_blank" rel="noopener noreferrer">Ordenanzas Patrimonios</a></li>
+                      <li><a href="https://hcdvillagesell.com.ar/wp-content/uploads/2023/07/3228-3360-PLANES-DE-PAGO-LOTES-CON-SERVICIO.pdf" target="_blank" rel="noopener noreferrer">Programa de Adjudicación de Lotes con Servicios Ord. 3360/23</a></li>
+                      <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VzXzVTcUw0SEJCQmo5dE9VSGlUMWFVQlliTGpHTHNOM3lDN1NhWkVybWNDU1E&id=CDFD5F6443FDC16A%21s3ffb686bc57d488fb432faef73827619&cid=CDFD5F6443FDC16A&sb=name&sd=1&v=validatepermission" target="_blank" rel="noopener noreferrer">Ordenanzas Patrimonio</a></li>
                       <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VzXzVTcUw0SEJCQmo5dE9VSGlUMWFVQlliTGpHTHNOM3lDN1NhWkVybWNDU1E&id=CDFD5F6443FDC16A%21s5e622e63d09b4cd786d34a5f3ef3e15e&cid=CDFD5F6443FDC16A&sb=name&sd=1&v=validatepermission" target="_blank" rel="noopener noreferrer">Ordenanzas Veredas</a></li>
                     </ul>
                     
@@ -284,7 +367,7 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
           </div>
 
           <!-- Vista del Botón 3: D.I.E.P.E.P. -->
-          <div v-if="selectedOption === 3" class="section">
+          <div v-if="selectedOption === 4" class="section">
             <div class="row justify-content-center">
               <div class="col-11 col-lg-10">
                 <h3 class="text-green mb-4 mt-5">NUESTRA LABOR</h3>
@@ -364,7 +447,7 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
                     <i class="bi bi-envelope-fill"></i> dirinspyfachadabalcones@gesell.gob.ar</p>
                   </div>
                   <div class="col-md-3 mb-3">
-                    <h6 class="text-black text-roboto">Secretaría de Hábitat</h6>
+                    <h6 class="text-black text-roboto">Dirección de Hábitat y Vivienda</h6>
                     <p class="small text-muted text-roboto">
                       <i class="bi bi-geo-alt-fill"></i> Avenida 5 N°522<br>
                     <i class="bi bi-telephone-fill"></i> (2255) 47-8240<br>
