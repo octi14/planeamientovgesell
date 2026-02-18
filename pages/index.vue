@@ -20,27 +20,31 @@
               <h3 class="text-green mb-5 mt-5">¿Qué trámite estás buscando?</h3>
 
               <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-3 mb-3 d-flex">
+                <div class="col-12 col-md-6 col-lg-4 mb-3 d-flex">
                   <MainButton class="w-100" :isActive="selectedOption === 1" @click="selectOption(1)">
                     PLANEAMIENTO
                   </MainButton>
                 </div>
-
-                <div class="col-12 col-md-6 col-lg-3 mb-3 d-flex">
+                <div class="col-12 col-md-6 col-lg-4 mb-3 d-flex">
                   <MainButton class="w-100" :isActive="selectedOption === 2" @click="selectOption(2)">
                     HÁBITAT Y VIVIENDA
                   </MainButton>
                 </div>
-
-                <div class="col-12 col-md-6 col-lg-3 mb-3 d-flex">
+                <div class="col-12 col-md-6 col-lg-4 mb-3 d-flex">
                   <MainButton class="w-100" :isActive="selectedOption === 3" @click="selectOption(3)">
                     DIRECCIÓN DE <br />OBRAS PARTICULARES
                   </MainButton>
                 </div>
-
-                <div class="col-12 col-md-6 col-lg-3 mb-3 d-flex">
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4 mb-3 d-flex">
                   <MainButton class="w-100" :isActive="selectedOption === 4" @click="selectOption(4)">
                     D. I. E. P. E. P.
+                  </MainButton>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3 d-flex">
+                  <MainButton class="w-100" :isActive="selectedOption === 5" @click="selectOption(5)">
+                    CATASTRO
                   </MainButton>
                 </div>
               </div>
@@ -416,6 +420,145 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
             </div>
           </div>
 
+          <!-- Vista del Botón 5: CATASTRO -->
+          <div v-if="selectedOption === 5" class="section">
+            <div class="row justify-content-center">
+              <div class="col-11 col-lg-10">
+                <h3 class="text-green mb-4 mt-5">Departamento de Catastro</h3>
+                <p class="text-roboto">El Departamento de Catastro es el área municipal encargada de registrar, organizar y actualizar la información de todos los inmuebles del Partido de Villa Gesell. Aquí se administran los datos de los propietarios, superficies edificadas y declaradas, Planos de Mensura y/o Propiedad Horizontal, nuevos loteos y toda modificación que afecte a los inmuebles.</p>
+                <p class="text-roboto">Nuestro catastro garantiza que cada inmueble tenga su correcta identificación catastral y que la información parcelaria esté actualizada en el registro municipal.</p>
+              </div>
+            </div>
+            <div class="cards-section">
+              <div class="row justify-content-center">
+                <div class="col-11 col-lg-10">
+                  <!-- Ordenanzas -->
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
+                      <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('catastroOrdenanzas')" style="cursor: pointer;">
+                        <h5 class="text-green mb-0">Ordenanzas</h5>
+                        <i :class="collapseStates.catastroOrdenanzas ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                      </div>
+                    </div>
+                    <div v-if="collapseStates.catastroOrdenanzas" class="collapse-content collapse show">
+                      <div class="card-body">
+                        <p class="text-black text-roboto"><a href="https://arvige.gob.ar/legislacion/pdf/12" target="_blank" rel="noopener noreferrer">Ordenanza 2156/08 (TO2025) Código Tributario</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Cambio de Titularidad -->
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
+                      <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('catastroCambioTitularidad')" style="cursor: pointer;">
+                        <h5 class="text-green mb-0">Cambio de Titularidad</h5>
+                        <i :class="collapseStates.catastroCambioTitularidad ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                      </div>
+                    </div>
+                    <div v-if="collapseStates.catastroCambioTitularidad" class="collapse-content collapse show">
+                      <div class="card-body">
+                        <p class="text-black text-roboto">Enviá un mail a <a href="mailto:catastro@gesell.gob.ar">catastro@gesell.gob.ar</a> con la siguiente información:</p>
+                        <ul class="text-roboto">
+                          <li>Escritura inscripta en el Registro de la Propiedad (escaneada completa en un solo archivo PDF).</li>
+                          <li>DNI del/los titular/es.</li>
+                          <li>Declaratoria de Herederos o Sucesión inscripta (si corresponde).</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Cambio de Domicilio -->
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
+                      <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('catastroCambioDomicilio')" style="cursor: pointer;">
+                        <h5 class="text-green mb-0">Cambio de Domicilio</h5>
+                        <i :class="collapseStates.catastroCambioDomicilio ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                      </div>
+                    </div>
+                    <div v-if="collapseStates.catastroCambioDomicilio" class="collapse-content collapse show">
+                      <div class="card-body">
+                        <p class="text-black text-roboto">Enviá un mail a <a href="mailto:catastro@gesell.gob.ar">catastro@gesell.gob.ar</a> con la siguiente información:</p>
+                        <ul class="text-roboto">
+                          <li>DNI del titular registrado.</li>
+                          <li>Copia simple de Escritura.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Solicitud de Número de Puerta / Altura Domiciliaria -->
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
+                      <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('catastroSolicitudNumeroPuerta')" style="cursor: pointer;">
+                        <h5 class="text-green mb-0">Solicitud de Número de Puerta / Altura Domiciliaria</h5>
+                        <i :class="collapseStates.catastroSolicitudNumeroPuerta ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                      </div>
+                    </div>
+                    <div v-if="collapseStates.catastroSolicitudNumeroPuerta" class="collapse-content collapse show">
+                      <div class="card-body">
+                        <p class="text-black text-roboto">Enviá un mail a <a href="mailto:catastro@gesell.gob.ar">catastro@gesell.gob.ar</a> con la siguiente información:</p>
+                        <ul class="text-roboto">
+                          <li>Nomenclatura catastral correcta</li>
+                          <li>Número de cuenta</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Adhesión a Boleta Digital -->
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
+                      <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('catastroAdhesionBoletaDigital')" style="cursor: pointer;">
+                        <h5 class="text-green mb-0">Adhesión a Boleta Digital</h5>
+                        <i :class="collapseStates.catastroAdhesionBoletaDigital ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                      </div>
+                    </div>
+                    <div v-if="collapseStates.catastroAdhesionBoletaDigital" class="collapse-content collapse show">
+                      <div class="card-body">
+                        <p class="text-black text-roboto">Para adherirte a la Boleta Digital, podés hacerlo ingresando a <a href="https://mail.arvige.gob.ar/boleta" target="_blank" rel="noopener noreferrer">https://mail.arvige.gob.ar/boleta</a> y completando el formulario en línea.</p>
+                        <p class="text-black text-roboto">También podés enviar un mail a <a href="mailto:catastro@gesell.gob.ar">catastro@gesell.gob.ar</a> con la siguiente información:</p>
+                        <ul class="text-roboto">
+                          <li>Número de cuenta.</li>
+                          <li>DNI del titular registrado.</li>
+                          <li>Dirección de correo electrónico donde desea recibirla.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Solicitud planos de Mensura y Planchetas Catastrales -->
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
+                      <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('catastroSolicitudPlanosMensura')" style="cursor: pointer;">
+                        <h5 class="text-green mb-0">Solicitud planos de Mensura y Planchetas Catastrales</h5>
+                        <i :class="collapseStates.catastroSolicitudPlanosMensura ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                      </div>
+                    </div>
+                    <div v-if="collapseStates.catastroSolicitudPlanosMensura" class="collapse-content collapse show">
+                      <div class="card-body">
+                        <p class="text-black text-roboto">Enviá un mail a <a href="mailto:catastro@gesell.gob.ar">catastro@gesell.gob.ar</a> con la siguiente información:</p>
+                        <ul class="text-roboto">
+                          <li>Nomenclatura catastral correcta</li>
+                          <li>Número de plano</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Certificado de Domicilio -->
+                  <div class="card section-card shadow-card mb-3">
+                    <div class="card-header">
+                      <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('catastroCertificadoDomicilio')" style="cursor: pointer;">
+                        <h5 class="text-green mb-0">Certificado de Domicilio</h5>
+                        <i :class="collapseStates.catastroCertificadoDomicilio ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                      </div>
+                    </div>
+                    <div v-if="collapseStates.catastroCertificadoDomicilio" class="collapse-content collapse show">
+                      <div class="card-body">
+                        <p class="text-black text-roboto">El Certificado de Domicilio se tramita de manera presencial en el Departamento de Catastro.</p>
+                        <p class="text-black text-roboto">Tiene un costo que será informado y abonado al momento de realizar el trámite (según Ord. Tributaria y módulo fiscal vigente).</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Información de Contacto (siempre visible) -->
           <div class="contact-section">
             <h3 class="text-green text-center mb-5">Información de Contacto</h3>
@@ -474,11 +617,21 @@ const collapseStates = ref({
   planeamientoCertificadoUrbanistico: false,
   planeamientoAperturaCalles: false,
   planeamientoDocumentacion: false,
+  planeamientoEvaluacionesImpactoAmbiental: false,
   matricula: false,
   solicitud: false,
   horarios: false,
   documentacion: false,
   diepepDocumentacion: false,
+  insctipcionLotesServicios: false,
+  documentación: false,
+  catastroOrdenanzas: false,
+  catastroCambioTitularidad: false,
+  catastroCambioDomicilio: false,
+  catastroSolicitudNumeroPuerta: false,
+  catastroAdhesionBoletaDigital: false,
+  catastroSolicitudPlanosMensura: false,
+  catastroCertificadoDomicilio: false,
 })
 
 const selectOption = (option) => {
