@@ -398,7 +398,7 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
                 </div>
                 <div v-if="collapseStates.moratoria" class="collapse-content collapse" :class="{ show: collapseStates.moratoria }" id="collapse-moratoria">
                   <div class="card-body">
-                    <p class="text-black text-roboto">Está vigente la <a href="https://drive.google.com/file/d/146W9CNgM7yIJ7wctW1mDP0JQzDf9kK6Z/view" target="_blank" rel="noopener noreferrer">ordenanza 3661/26</a> de Regularización temporal y extraordinaria de construcciones. Según el caso, los principales beneficios del plan son descuentos de entre el 50% y 70% en multas, y planes de pago de hasta 18 cuotas.</p>
+                    <p class="text-black text-roboto">Está vigente la <a href="https://drive.google.com/file/d/161PnRTWHhJYGWGMbwpNWdGiFndQUug0t/view?usp=sharing" target="_blank" rel="noopener noreferrer">ordenanza 3661/26</a> de Regularización temporal y extraordinaria de construcciones. Según el caso, los principales beneficios del plan son descuentos de entre el 50% y 70% en multas, y planes de pago de hasta 18 cuotas.</p>
                     <p class="text-black text-roboto"><b>El plan contempla los siguientes pasos a cumplir por los/las requirentes:</b></p>
                     <ul class="text-roboto">
                       <li><b>Hasta el 31 de mayo de 2026:</b> presentación del formulario de acogimiento en la Dirección de Obras Particulares (<a href="https://drive.google.com/file/d/1poGigOkquTW-cELbRVAgxlvEAD5qPcJb/view?usp=sharing" target="_blank" rel="noopener noreferrer">descargalo haciendo click aquí</a>).</li>
