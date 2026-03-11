@@ -1,5 +1,27 @@
 <template>
   <div class="page main-background">
+    <!-- Popup Moratoria (se muestra al cargar el sitio) -->
+    <Teleport to="body">
+      <div v-if="showMoratoriaPopup" class="moratoria-popup-overlay" @click.self="closeMoratoriaPopup">
+        <div class="moratoria-popup-content">
+          <button type="button" class="moratoria-popup-close" aria-label="Cerrar" @click="closeMoratoriaPopup">
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <a
+            href="#moratoria"
+            class="moratoria-popup-image-link"
+            @click.prevent="goToMoratoria"
+          >
+            <img
+              src="/assets/css/img/moratoria.png"
+              alt="Moratoria - Regularización temporal y extraordinaria de construcciones"
+              class="moratoria-popup-image"
+            />
+          </a>
+        </div>
+      </div>
+    </Teleport>
+
     <div class="container-fluid">
       <div class="row g-0">
         <div class="col-12">
@@ -365,6 +387,28 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
                   </div>
                 </div>
               </div>
+
+              <!-- Moratoria Regularización de Construcciones -->
+              <div id="moratoria" class="card section-card shadow-card mb-3">
+                <div class="card-header">
+                  <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('moratoria')" style="cursor: pointer;" data-bs-toggle="collapse" :data-bs-target="'#collapse-moratoria'" aria-expanded="false" :aria-controls="'collapse-moratoria'">
+                    <h5 class="text-green mb-0">Regularización Temporal y Extraordinaria</h5>
+                    <i :class="collapseStates.moratoria ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                  </div>
+                </div>
+                <div v-if="collapseStates.moratoria" class="collapse-content collapse" :class="{ show: collapseStates.moratoria }" id="collapse-moratoria">
+                  <div class="card-body">
+                    <p class="text-black text-roboto">Está vigente la <a href="https://drive.google.com/file/d/146W9CNgM7yIJ7wctW1mDP0JQzDf9kK6Z/view" target="_blank" rel="noopener noreferrer">ordenanza 3661/26</a> de Regularización temporal y extraordinaria de construcciones. Según el caso, los principales beneficios del plan son descuentos de entre el 50% y 70% en multas, y planes de pago de hasta 18 cuotas.</p>
+                    <p class="text-black text-roboto"><b>El plan contempla los siguientes pasos a cumplir por los/las requirentes:</b></p>
+                    <ul class="text-roboto">
+                      <li><b>Hasta el 31 de mayo de 2026:</b> presentación del formulario de acogimiento en la Dirección de Obras Particulares (<a href="https://drive.google.com/file/d/1poGigOkquTW-cELbRVAgxlvEAD5qPcJb/view?usp=sharing" target="_blank" rel="noopener noreferrer">descargalo haciendo click aquí</a>).</li>
+                      <li><b>Hasta el 30 de octubre de 2026:</b> Presentación de planos.</li>
+                      <li><b>Hasta el 31 de marzo de 2027:</b> Plazo para finalizar la aprobación o registración de planos.</li>
+                    </ul>
+                    <p class="text-black text-roboto">Podés hacer tus consultas enviando un correo a <a href="mailto:obrasparticulares@gesell.gob.ar">obrasparticulares@gesell.gob.ar</a> o comunicándote al (2255) 47-8044.</p>
+                  </div>
+                </div>
+              </div>
                 </div>
               </div>
             </div>
@@ -609,10 +653,12 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
 </template>
 
 <script setup>
-import { ref, nextTick } from 'vue'
+import { ref, nextTick, onMounted } from 'vue'
 
 const selectedOption = ref(null)
+const showMoratoriaPopup = ref(false)
 const collapseStates = ref({
+  moratoria: false,
   planeamientoPlanParticularizado: false,
   planeamientoCertificadoUrbanistico: false,
   planeamientoAperturaCalles: false,
@@ -657,6 +703,37 @@ const selectOption = (option) => {
 const toggleCollapse = (section) => {
   collapseStates.value[section] = !collapseStates.value[section]
 }
+
+const setBodyScroll = (enabled) => {
+  if (typeof document !== 'undefined') {
+    document.body.style.overflow = enabled ? '' : 'hidden'
+  }
+}
+
+const closeMoratoriaPopup = () => {
+  showMoratoriaPopup.value = false
+  setBodyScroll(true)
+}
+
+const goToMoratoria = () => {
+  closeMoratoriaPopup()
+  selectedOption.value = 3
+  collapseStates.value.moratoria = true
+  nextTick(() => {
+    const targetElement = document.getElementById('moratoria')
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  })
+}
+
+onMounted(() => {
+  showMoratoriaPopup.value = true
+  setBodyScroll(false)
+})
 </script>
 
 <style scoped>
@@ -1018,5 +1095,62 @@ a{
     font-size: 3rem !important;
     margin-top: 0 !important;
   }
+}
+
+/* Popup Moratoria */
+.moratoria-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+.moratoria-popup-content {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+}
+
+.moratoria-popup-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 1.2rem;
+  z-index: 10;
+  transition: color 0.2s;
+}
+
+.moratoria-popup-close:hover {
+  color: #000;
+}
+
+.moratoria-popup-image-link {
+  display: block;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.moratoria-popup-image {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 </style>
