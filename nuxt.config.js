@@ -55,7 +55,7 @@ export default defineNuxtConfig({
   // Nitro configuration for static generation
   nitro: {
     prerender: {
-      routes: ['/']
+      routes: ['/', '/grafico']
     }
   }
 })
