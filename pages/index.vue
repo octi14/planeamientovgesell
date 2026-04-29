@@ -289,7 +289,9 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
 
             <div class="cards-section">
               <div class="row justify-content-center">
-                <div class="col-11 col-lg-10">
+                <!-- MOBILE: este ancho define la "caja" de los desplegables.
+                     Si querés más ancho en mobile, cambiar `col-11` por `col-12`. -->
+                <div class="col-12 col-lg-10">
               <!-- ¿Cómo matricularse como profesional? -->
               <div class="card section-card shadow-card mb-3">
                 <div class="card-header">
@@ -406,6 +408,21 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
                       <li><b>Hasta el 31 de marzo de 2027:</b> Plazo para finalizar la aprobación o registración de planos.</li>
                     </ul>
                     <p class="text-black text-roboto">Podés hacer tus consultas enviando un correo a <a href="mailto:obrasparticulares@gesell.gob.ar">obrasparticulares@gesell.gob.ar</a> o comunicándote al (2255) 47-8044.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Datos estadísticos -->
+              <div class="card section-card shadow-card mb-3">
+                <div class="card-header">
+                  <div class="d-flex justify-content-between align-items-center" @click="toggleCollapse('obrasEstadisticas')" style="cursor: pointer;" data-bs-toggle="collapse" :data-bs-target="'#collapse-obrasEstadisticas'" aria-expanded="false" :aria-controls="'collapse-obrasEstadisticas'">
+                    <h5 class="text-green mb-0">Datos estadísticos</h5>
+                    <i :class="collapseStates.obrasEstadisticas ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                  </div>
+                </div>
+                <div v-if="collapseStates.obrasEstadisticas" class="collapse-content collapse" :class="{ show: collapseStates.obrasEstadisticas }" id="collapse-obrasEstadisticas">
+                  <div class="card-body estadisticas-body">
+                    <GraficoM2 />
                   </div>
                 </div>
               </div>
@@ -664,6 +681,7 @@ const collapseStates = ref({
   planeamientoAperturaCalles: false,
   planeamientoDocumentacion: false,
   planeamientoEvaluacionesImpactoAmbiental: false,
+  obrasEstadisticas: false,
   matricula: false,
   solicitud: false,
   horarios: false,
@@ -773,6 +791,13 @@ onMounted(() => {
 
 .section-card .card-body {
   padding: 0 0 1.5rem 0 !important;
+}
+
+/* El desplegable de estadísticas en mobile respeta gutters laterales */
+@media (max-width: 767.98px) {
+  .section-card .card-body.estadisticas-body {
+    padding: 0 0.9rem 1.3rem 0.9rem !important;
+  }
 }
 
 .section-card .card-body ul {

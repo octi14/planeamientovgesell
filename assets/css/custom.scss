@@ -62,6 +62,8 @@ body {
 
 .section {
   background-color: #f0f0f0;
+  // MOBILE: este padding horizontal también reduce el ancho visual de los desplegables.
+  // Si necesitás que ocupen más en celular, bajar este valor (ej: 1rem) con media query.
   padding: 3rem 2rem;
   margin-bottom: 0;
   border-radius: 0;

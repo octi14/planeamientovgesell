@@ -1,55 +1,43 @@
 <template>
-  <section class="grafico-card">
-    <div class="grafico-header">
-      <h2 class="anio">2025</h2>
-    </div>
+  <section class="estadisticas-card">
+    <div class="estadisticas-layout">
+      <div class="chart-column">
+        <div class="chart-area">
+          <div class="donut-wrapper">
+            <canvas
+              ref="chartCanvas"
+              class="donut-chart"
+              aria-label="Distribucion de m² por tipo de tramite en 2025"
+            ></canvas>
+          </div>
 
-    <div class="grafico-layout">
-      <div class="chart-area">
-        <div class="pie-wrapper">
-          <canvas
-            ref="chartCanvas"
-            class="pie-chart"
-            aria-label="Distribucion de m2 por categoria en 2025"
-          ></canvas>
-        </div>
-
-        <div
-          v-for="(item, index) in datos"
-          :key="item.nombre"
-          :class="['pie-label', `label-${index + 1}`]"
-        >
-          <span class="valor">{{ item.valorGrafico }}</span>
-          <span class="porcentaje">{{ item.porcentaje }}%</span>
+          <div
+            v-for="(item, index) in datos"
+            :key="item.nombre"
+            :class="['donut-label', `label-${index + 1}`]"
+          >
+            {{ item.porcentaje }}%
+          </div>
         </div>
       </div>
 
-      <div class="legend-table">
+      <hr class="separador" />
+
+      <div class="info-column">
+        <span class="anio-pill">Año 2025</span>
+        <h3 class="estadisticas-titulo">
+          <span class="titulo-icono"></span>
+          Tipos de trámite (en m²)
+        </h3>
+
         <ul class="legend-list">
           <li v-for="item in datos" :key="item.nombre">
             <span class="legend-color" :style="{ backgroundColor: item.color }"></span>
-            <span>{{ item.nombre }}</span>
+            <span class="legend-texto">
+              <strong>{{ item.nombre }}</strong> - {{ item.valorTabla }} m²
+            </span>
           </li>
         </ul>
-
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th class="m2-header">m2</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="item in datos" :key="`fila-${item.nombre}`">
-              <td>{{ item.nombre }}</td>
-              <td>{{ item.valorTabla }}</td>
-            </tr>
-            <tr class="total-row">
-              <td>Total</td>
-              <td>{{ totalTabla }}</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </section>
@@ -57,38 +45,33 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { Chart, PieController, ArcElement, Tooltip, Legend } from 'chart.js'
+import { Chart, DoughnutController, ArcElement, Tooltip, Legend } from 'chart.js'
 
-Chart.register(PieController, ArcElement, Tooltip, Legend)
+Chart.register(DoughnutController, ArcElement, Tooltip, Legend)
 
 const datos = [
   {
     nombre: 'Permisos de obra',
     valor: 27707.51,
-    valorGrafico: '27707.5',
     valorTabla: '27707,51',
     porcentaje: 50,
-    color: '#4472c4',
+    color: '#1fa22e',
   },
   {
-    nombre: 'Aprobacion de obras',
+    nombre: 'Aprobaciones de obra',
     valor: 15997.54,
-    valorGrafico: '15997.5',
     valorTabla: '15997,54',
     porcentaje: 29,
-    color: '#ed7d31',
+    color: '#ff7a00',
   },
   {
     nombre: 'Regularizaciones',
     valor: 11829.49,
-    valorGrafico: '11829.4',
     valorTabla: '11829,49',
     porcentaje: 21,
-    color: '#a5a5a5',
+    color: '#e3bf1b',
   },
 ]
-
-const totalTabla = '55534,54'
 
 const chartCanvas = ref(null)
 let pieChart = null
@@ -97,15 +80,16 @@ onMounted(() => {
   if (!chartCanvas.value) return
 
   pieChart = new Chart(chartCanvas.value, {
-    type: 'pie',
+    type: 'doughnut',
     data: {
       labels: datos.map((item) => item.nombre),
       datasets: [
         {
           data: datos.map((item) => item.valor),
           backgroundColor: datos.map((item) => item.color),
-          borderColor: '#f4f4f4',
-          borderWidth: 3,
+          borderColor: '#ffffff',
+          borderWidth: 2,
+          cutout: '63%',
         },
       ],
     },
@@ -118,12 +102,7 @@ onMounted(() => {
           display: false,
         },
         tooltip: {
-          callbacks: {
-            label: (ctx) => {
-              const item = datos[ctx.dataIndex]
-              return `${item.nombre}: ${item.valorTabla} m2 (${item.porcentaje}%)`
-            },
-          },
+          enabled: false,
         },
       },
     },
@@ -139,214 +118,227 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-.grafico-card {
-  background: #f2f2f2;
-  border: 1px solid #dddddd;
-  border-radius: 6px;
-  padding: 1.5rem 1.25rem 1.8rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.grafico-header {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.anio {
+.estadisticas-card {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
-  font-size: 2.5rem;
-  color: #5f5f5f;
-  font-weight: 500;
-  letter-spacing: 0.4px;
 }
 
-.grafico-layout {
-  display: grid;
-  grid-template-columns: minmax(460px, 1fr) minmax(260px, 300px);
-  gap: 2rem;
-  align-items: center;
+.estadisticas-layout {
+  background: #F5F5F5;
+  border-radius: 8px;
+  padding: 3rem 1.2rem 1.35rem;
 }
 
 .chart-area {
   position: relative;
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 230px;
+  max-width: 260px;
 }
 
-.pie-wrapper {
-  width: 300px;
-  height: 300px;
+.donut-wrapper {
+  width: 164px;
+  height: 164px;
+  margin: 0 auto;
 }
 
-.pie-chart {
+.donut-chart {
   width: 100%;
   height: 100%;
 }
 
-.pie-label {
+.donut-label {
   position: absolute;
-  color: #4f4f4f;
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-  font-size: 0.95rem;
+  color: #5a5a5a;
+  font-size: 1.45rem;
+  line-height: 1;
+  font-weight: 700;
   pointer-events: none;
-  text-align: center;
 }
 
 .label-1 {
-  top: 54%;
-  left: 60%;
-  transform: translate(-50%, -50%);
+  top: 31%;
+  right: -2%;
 }
 
 .label-2 {
-  top: 69%;
-  left: 36%;
-  transform: translate(-50%, -50%);
+  left: 9%;
+  bottom: 29%;
 }
 
 .label-3 {
-  top: 31%;
-  left: 36%;
-  transform: translate(-50%, -50%);
+  top: 5%;
+  left: 6%;
 }
 
-.valor {
-  font-weight: 500;
-}
-
-.porcentaje {
-  font-weight: 600;
-}
-
-.legend-table {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-  align-self: center;
+.separador {
+  border: none;
+  border-top: 1px solid #c8c8c8;
+  margin: 0.5rem 0 0.75rem;
   width: 100%;
-  max-width: 300px;
-  overflow: hidden;
+}
+
+.anio-pill {
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  background: #dddddd;
+  color: #777;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+}
+
+.estadisticas-titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0 0 1rem;
+  font-size: 1.3rem;
+  color: #222;
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+}
+
+.titulo-icono {
+  display: none;
 }
 
 .legend-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  color: #585858;
-  font-size: 1.02rem;
 }
 
 .legend-list li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.45rem;
 }
 
 .legend-color {
-  width: 0.6rem;
-  height: 0.6rem;
-  border-radius: 2px;
+  width: 0.95rem;
+  height: 0.95rem;
   flex: 0 0 auto;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  table-layout: fixed;
-  background: #fff;
-  font-size: 1rem;
-  color: #444;
+.legend-texto {
+  color: #333333;
+  font-size: 0.9rem;
+  line-height: 1.35;
 }
 
-th,
-td {
-  border: 1px solid #777;
-  padding: 0.1rem 0.35rem;
-  line-height: 1.05;
-}
-
-th {
-  font-weight: 500;
-  text-align: center;
-  font-size: 1.8rem;
-}
-
-.m2-header {
-  font-size: 1.1rem;
-}
-
-td:first-child {
-  text-align: left;
-  width: 74%;
-  white-space: normal;
-  word-break: break-word;
-}
-
-td:last-child {
-  text-align: right;
-  width: 26%;
-  white-space: nowrap;
-}
-
-.total-row td {
-  font-weight: 500;
-}
-
-@media (max-width: 992px) {
-  .grafico-layout {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-
-  .legend-table {
-    margin-inline: auto;
-    width: min(100%, 360px);
-  }
-
-  .pie-wrapper {
-    width: 260px;
-    height: 260px;
+@media (min-width: 768px) {
+  .estadisticas-layout {
+    padding: 1rem 1rem 1.15rem;
   }
 
   .chart-area {
-    min-height: 280px;
+    min-height: 250px;
+    max-width: 300px;
   }
 
-  .pie-label {
-    font-size: 0.82rem;
+  .donut-wrapper {
+    width: 182px;
+    height: 182px;
+  }
+
+  .donut-label {
+    font-size: 1.6rem;
+  }
+
+  .legend-texto {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .estadisticas-layout {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    column-gap: 1.8rem;
+    align-items: center;
+    padding: 1.2rem 1.1rem 1.25rem;
+    position: relative;
+  }
+
+  .chart-column {
+    grid-column: 1;
+  }
+  
+  .chart-area {
+    min-height: 320px;
+    max-width: 380px;
+    margin-inline: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .donut-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+
+  .donut-chart {
+    margin-top: 0;
+  }
+
+  .donut-label {
+    font-size: 1.9rem;
   }
 
   .label-1 {
-    top: 54%;
-    left: 60%;
+    top: 50%;
+    right: -2%;
+    transform: translateY(-50%);
   }
 
   .label-2 {
-    top: 69%;
-    left: 36%;
+    left: 8%;
+    bottom: 13%;
   }
 
   .label-3 {
-    top: 31%;
-    left: 36%;
+    top: 12%;
+    left: 8%;
   }
 
-  table {
-    font-size: 0.95rem;
+  .separador {
+    display: none;
   }
 
-  th {
-    font-size: 1.2rem;
+  .info-column {
+    grid-column: 2;
+    padding-left: 1.25rem;
   }
 
-  .m2-header {
-    font-size: 0.95rem;
+  .estadisticas-layout::after {
+    content: '';
+    position: absolute;
+    top: 1.05rem;
+    bottom: 1.05rem;
+    left: calc(1.1rem + 360px + 0.9rem);
+    width: 1px;
+    background: #b8b8b8;
+  }
+
+  .anio-pill {
+    margin-bottom: 0.4rem;
+  }
+
+  .estadisticas-titulo {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .titulo-icono {
+    display: none;
+  }
+
+  .legend-texto {
+    font-size: 1.15rem;
   }
 }
 </style>
