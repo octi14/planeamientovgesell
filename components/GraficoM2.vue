@@ -1,43 +1,46 @@
 <template>
   <section class="estadisticas-card">
     <div class="estadisticas-layout">
-      <div class="chart-column">
-        <div class="chart-area">
-          <div class="donut-wrapper">
-            <canvas
-              ref="chartCanvas"
-              class="donut-chart"
-              aria-label="Distribucion de m² por tipo de tramite en 2025"
-            ></canvas>
-          </div>
+      <!-- Bloque que se puede desplazar en desktop: gráfico + separador + texto (el fondo gris queda en .estadisticas-layout) -->
+      <div class="estadisticas-inner">
+        <div class="chart-column">
+          <div class="chart-area">
+            <div class="donut-wrapper">
+              <canvas
+                ref="chartCanvas"
+                class="donut-chart"
+                aria-label="Distribucion de m² por tipo de tramite en 2025"
+              ></canvas>
+            </div>
 
-          <div
-            v-for="(item, index) in datos"
-            :key="item.nombre"
-            :class="['donut-label', `label-${index + 1}`]"
-          >
-            {{ item.porcentaje }}%
+            <div
+              v-for="(item, index) in datos"
+              :key="item.nombre"
+              :class="['donut-label', `label-${index + 1}`]"
+            >
+              {{ item.porcentaje }}%
+            </div>
           </div>
         </div>
-      </div>
 
-      <hr class="separador" />
+        <hr class="separador" />
 
-      <div class="info-column">
-        <span class="anio-pill">Año 2025</span>
-        <h3 class="estadisticas-titulo">
-          <span class="titulo-icono"></span>
-          Tipos de trámite (en m²)
-        </h3>
+        <div class="info-column">
+          <span class="anio-pill">Año 2025</span>
+          <h3 class="estadisticas-titulo">
+            <span class="titulo-icono"></span>
+            Tipos de trámite (en m²)
+          </h3>
 
-        <ul class="legend-list">
-          <li v-for="item in datos" :key="item.nombre">
-            <span class="legend-color" :style="{ backgroundColor: item.color }"></span>
-            <span class="legend-texto">
-              <strong>{{ item.nombre }}</strong> - {{ item.valorTabla }} m²
-            </span>
-          </li>
-        </ul>
+          <ul class="legend-list">
+            <li v-for="item in datos" :key="item.nombre">
+              <span class="legend-color" :style="{ backgroundColor: item.color }"></span>
+              <span class="legend-texto">
+                <strong>{{ item.nombre }}</strong> - {{ item.valorTabla }} m²
+              </span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -118,6 +121,7 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
+/* ===== Base (mobile first): estilos generales del grafico ===== */
 .estadisticas-card {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -127,6 +131,10 @@ onBeforeUnmount(() => {
   background: #F5F5F5;
   border-radius: 8px;
   padding: 3rem 1.2rem 1.35rem;
+}
+
+.estadisticas-inner {
+  width: 100%;
 }
 
 .chart-area {
@@ -229,6 +237,7 @@ onBeforeUnmount(() => {
   line-height: 1.35;
 }
 
+/* ===== Tablet y resoluciones intermedias (>= 768px) ===== */
 @media (min-width: 768px) {
   .estadisticas-layout {
     padding: 1rem 1rem 1.15rem;
@@ -253,18 +262,33 @@ onBeforeUnmount(() => {
   }
 }
 
+/* ===== Desktop grande (>= 1200px) ===== */
 @media (min-width: 1200px) {
   .estadisticas-layout {
+    padding: 1.2rem 1.1rem 1.25rem;
+  }
+
+  .estadisticas-inner {
     display: grid;
     grid-template-columns: 360px 1fr;
-    column-gap: 1.8rem;
+    /* Hueco amplio para el separador (la línea va en el centro del gap) */
+    --estadisticas-col-gap: 2.75rem;
+    column-gap: var(--estadisticas-col-gap);
     align-items: center;
-    padding: 1.2rem 1.1rem 1.25rem;
     position: relative;
+    /* Desplaza solo gráfico + línea + columna de texto; el rectángulo gris no se corre */
+    margin-left: 4rem;
+    margin-right: 0;
+  }
+
+  .estadisticas-card{
+    padding: 0 1.25rem;
   }
 
   .chart-column {
     grid-column: 1;
+    /* Aire entre el borde derecho del gráfico / “50%” y el separador */
+    padding-right: 1rem;
   }
   
   .chart-area {
@@ -277,12 +301,8 @@ onBeforeUnmount(() => {
   }
 
   .donut-wrapper {
-    width: 250px;
-    height: 250px;
-  }
-
-  .donut-chart {
-    margin-top: 0;
+    width: 220px;
+    height: 220px;
   }
 
   .donut-label {
@@ -291,17 +311,16 @@ onBeforeUnmount(() => {
 
   .label-1 {
     top: 50%;
-    right: -2%;
     transform: translateY(-50%);
   }
 
   .label-2 {
-    left: 8%;
-    bottom: 13%;
+    left: 9%;
+    bottom: 18%;
   }
 
   .label-3 {
-    top: 12%;
+    top: 21%;
     left: 8%;
   }
 
@@ -311,15 +330,18 @@ onBeforeUnmount(() => {
 
   .info-column {
     grid-column: 2;
-    padding-left: 1.25rem;
+    /* Aire entre el separador y pill / título / leyenda */
+    padding-left: 1.5rem;
   }
 
-  .estadisticas-layout::after {
+  /* Separador vertical respecto al bloque interno (sin incluir padding del fondo gris) */
+  .estadisticas-inner::after {
     content: '';
     position: absolute;
-    top: 1.05rem;
-    bottom: 1.05rem;
-    left: calc(1.1rem + 360px + 0.9rem);
+    top: 2.75rem;
+    bottom: 2.75rem;
+    /* Centro del hueco entre las dos columnas (columna fija 360px + mitad del gap) */
+    left: calc(360px + var(--estadisticas-col-gap) / 2);
     width: 1px;
     background: #b8b8b8;
   }
@@ -329,8 +351,9 @@ onBeforeUnmount(() => {
   }
 
   .estadisticas-titulo {
-    margin-bottom: 1rem;
-    font-size: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 0.5rem;
+    font-size: 1.8rem;
   }
 
   .titulo-icono {
@@ -338,7 +361,17 @@ onBeforeUnmount(() => {
   }
 
   .legend-texto {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
+  }
+
+  .legend-color {
+    width: 1.4rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+  }
+
+  .legend-list li {
+    margin-block: 1rem;
   }
 }
 </style>
