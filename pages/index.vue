@@ -183,7 +183,7 @@
                         <div class="card-body">
                           <ul class="text-roboto">
                             <li><a href="https://drive.google.com/file/d/1C98Z-sC4UhKp43op5zBFl3ndqSZNa8Rk/view" target="_blank" rel="noopener noreferrer">Plan de Ordenamiento Municipal</a></li>
-                            <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s0559b1c958a1437187d2b8c6ee93afc4&parId=CDFD5F6443FDC16A%21sfe2c638f43224981b71bccbc58f0c6dd&o=OneUp" target="_blank" rel="noopener noreferrer">Plano de zonas</a></li>
+                            <li><a href="https://drive.google.com/file/d/1FDNPVEiHvFNX2tykiQ5uqd7th3k8_Kpt/view?usp=sharing" target="_blank" rel="noopener noreferrer">Plano de zonas</a></li>
                             <li><a href="https://hcdvillagesell.com.ar/wp-content/uploads/2023/07/3228-3360-PLANES-DE-PAGO-LOTES-CON-SERVICIO.pdf" target="_blank" rel="noopener noreferrer">Programa de Adjudicación de Lotes con Servicios Ord. 3360/23</a></li>
                           </ul>
                         </div>
@@ -343,7 +343,7 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
                 <div v-if="collapseStates.horarios" class="collapse-content collapse" :class="{ show: collapseStates.horarios }" id="collapse-horarios">
                   <div class="card-body">
                     <p class="text-black text-roboto">Los horarios de trabajo de obra están regulados por la
-                    <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21sd9f1f92abc534e9e88d3db0c0b7bb69f&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank"><u>Ordenanza 3494/24</u></a>
+                    <a href="https://drive.google.com/file/d/15lSID38hw9l55DgZBVSyxNkj6mWvv1D8/view?usp=sharing" target="_blank"><u>Ordenanza 3494/24</u></a>
                        y varían según la zona y época.</p>
                   </div>
                 </div>
@@ -362,23 +362,28 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
                     <h6 class="text-dark fw-bold text-roboto">Códigos y ordenanzas</h6>
                     <ul class="text-roboto">
                       <li><a href="https://drive.google.com/file/d/1C98Z-sC4UhKp43op5zBFl3ndqSZNa8Rk/view" target="_blank" rel="noopener noreferrer">Plan de Ordenamiento Municipal</a></li>
-                      <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s845dc44950f04c3c9b14b7c448a0a976&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank" rel="noopener noreferrer">Ordenanza de presentaciones y procedimientos municipales 961/92</a></li>
+                      <li><a href="https://drive.google.com/file/d/1QOsZWMVpzTgLAu0rEDhsONAM63ajWErq/view?usp=sharing" target="_blank" rel="noopener noreferrer">Ordenanza de presentaciones y procedimientos municipales 961/92</a></li>
                       <li>Plano Zonas, Índices y Planilla de Usos</li>
-                      <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21scae59ad208ad4aed8afd5348a3db87d6&parId=CDFD5F6443FDC16A%21sfe2c638f43224981b71bccbc58f0c6dd&o=OneUp" target="_blank" rel="noopener noreferrer">Plano Zonas Distritos Comerciales</a></li>
-                      <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21s16226b8db5cc454c92c6205dd9950636&parId=CDFD5F6443FDC16A%21sfe2c638f43224981b71bccbc58f0c6dd&o=OneUp" target="_blank" rel="noopener noreferrer">Plano Zonas Tributarias</a></li>
-                      <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy9DREZENUY2NDQzRkRDMTZBL0ViaVRBX1E0eHg5TG0xOUw3WERScWt3QkVJVkhOSko4TThmRmlXX2VIdW1ScWc&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21sf40393b8c7384b1f9b5f4bed70d1aa4c&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank" rel="noopener noreferrer">Resolución para Alojamientos Turísticos (Res. 23/14)</a></li>
+                      <li><a href="https://drive.google.com/file/d/1BAiUI6kUd5yYqsexZEziFhQpMcWTNUAd/view?usp=sharing" target="_blank" rel="noopener noreferrer">Plano Zonas Distritos Comerciales</a></li>
+                      <li><a href="https://drive.google.com/file/d/11lTAHo5-v-9QOec1Y-SWREl3KPhgs70Y/view?usp=sharing" target="_blank" rel="noopener noreferrer">Plano Zonas Tributarias</a></li>
+                      <li><a href="https://drive.google.com/file/d/1z8d_UvT-KS3wC4jDc_UotxOQBouRXEPB/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resolución para Alojamientos Turísticos (Res. 23/14)</a></li>
                       <li>Valores vigentes de Tasa de Visado y Multas</li>
-                      <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s7f8ca017b1cd493f852bb85704621bf8&parId=CDFD5F6443FDC16A%21s5903fb2476024c6abf69d18613878d32&o=OneUp" target="_blank" rel="noopener noreferrer">Visado Web y Planilla de Visado (Decreto 662/24)</a></li>
+                      <li><a href="https://drive.google.com/file/d/1vwU89PW2kjsNP3d4557-SOcd-nFRp7FA/view?usp=sharing" target="_blank" rel="noopener noreferrer">Visado Web y Planilla de Visado (Decreto 662/24)</a></li>
                       <li><a href="https://drive.google.com/file/d/1ckiA6b1_-M2X8NSP5bx7UQK93KBQBC-h/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Decreto 273-94 (1038-93) Pozos blancos</a></li>
                       <li><a href="https://hcdvillagesell.com.ar/wp-content/uploads/2023/07/3228-3360-PLANES-DE-PAGO-LOTES-CON-SERVICIO.pdf" target="_blank" rel="noopener noreferrer">Programa de Adjudicación de Lotes con Servicios Ord. 3360/23</a></li>
-                      <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VzXzVTcUw0SEJCQmo5dE9VSGlUMWFVQlliTGpHTHNOM3lDN1NhWkVybWNDU1E&id=CDFD5F6443FDC16A%21s3ffb686bc57d488fb432faef73827619&cid=CDFD5F6443FDC16A&sb=name&sd=1&v=validatepermission" target="_blank" rel="noopener noreferrer">Ordenanzas Patrimonio</a></li>
+                      <li><a href="https://drive.google.com/drive/folders/12MDLqMX2wbdbkoj5z2UNh9_Oye2WeBtP?usp=drive_link" target="_blank" rel="noopener noreferrer">Ordenanzas Patrimonio</a></li>
                      <!-- <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VzXzVTcUw0SEJCQmo5dE9VSGlUMWFVQlliTGpHTHNOM3lDN1NhWkVybWNDU1E&id=CDFD5F6443FDC16A%21s5e622e63d09b4cd786d34a5f3ef3e15e&cid=CDFD5F6443FDC16A&sb=name&sd=1&v=validatepermission" target="_blank" rel="noopener noreferrer">Ordenanzas Veredas</a></li> -->
-                      <li><a href="https://onedrive.live.com/?id=CDFD5F6443FDC16A%21s5e622e63d09b4cd786d34a5f3ef3e15e&cid=CDFD5F6443FDC16A&redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VzXzVTcUw0SEJCQmo5dE9VSGlUMWFVQlliTGpHTHNOM3lDN1NhWkVybWNDU1E" target="_blank" rel="noopener noreferrer">Ordenanzas Veredas</a></li>
+                      <li><a href="https://drive.google.com/drive/folders/1U29_2mPJH8HknLah3qDdJvjIIEXTyABv?usp=drive_link" target="_blank" rel="noopener noreferrer">Ordenanzas Veredas</a></li>
                     </ul>
                     
                     <h6 class="text-dark fw-bold text-roboto">Multas</h6>
                     <ul class="text-roboto">
-                      <li>Ordenanzas de multas (Ord. 931/91 – <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21scbb8e9406658439fbecfbd6dd2457b4f&parId=CDFD5F6443FDC16A%21s3f16db73217249318a969ea2fdbb1bf6&o=OneUp" target="_blank" rel="noopener noreferrer">2283/09</a> – 2243/17 – 2708/17 – <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21s761e9b92a43242f08077edf5228ebd89&parId=CDFD5F6443FDC16A%21s3f16db73217249318a969ea2fdbb1bf6&o=OneUp" target="_blank" rel="noopener noreferrer">2742/17</a> – <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VyTUVQZUNiMUZ0TnVBRHlwQ2dkVUNBQnBIM1hvZ1VwcHQ3eldid3JBbFFDeUE&cid=CDFD5F6443FDC16A&sb=name&sd=1&id=CDFD5F6443FDC16A%21s7347a6b25f004d01980ea5e844ca9c95&parId=CDFD5F6443FDC16A%21s3f16db73217249318a969ea2fdbb1bf6&o=OneUp" target="_blank" rel="noopener noreferrer">3325/22</a>)</li>
+                      <li>Ordenanzas de multas (Ord. 931/91 – 
+                        <a href="https://drive.google.com/file/d/1pEZDBLukyR8iFXpfUm8iDnhVhKKqNzt1/view?usp=sharing" target="_blank" rel="noopener noreferrer">2283/09</a>
+                         – 2243/17 – 
+                         <a href="https://drive.google.com/file/d/1KHTw9AYzlFaW0Dx9XjJiw--c8lyUoEnz/view?usp=sharing" target="_blank" rel="noopener noreferrer">2708/17</a> – 
+                         <a href="https://drive.google.com/file/d/15M4ZT_K1Ao1QbMaE6bAWPywUPTZFSO53/view?usp=sharing" target="_blank" rel="noopener noreferrer">2742/17</a> –
+                         <a href="https://drive.google.com/file/d/1A26CL5ficvo_IdpHU2FcIw05_FI8rkLe/view?usp=sharing" target="_blank" rel="noopener noreferrer"> 3325/22</a>)</li>
                       <!-- <li>Planilla de liquidación de multas</li> -->
                     </ul>
                     
@@ -471,9 +476,9 @@ Evitá multas, recargos, clausuras, paralización, demolición y/o suspensión d
                     <div v-if="collapseStates.diepepDocumentacion" class="collapse-content collapse" :class="{ show: collapseStates.diepepDocumentacion }" id="collapse-diepepDocumentacion">
                       <div class="card-body">
                         <ul class="text-roboto">
-                          <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VwdGFwc2Y2YU54T3BTd3V5VENqSndjQkhIb2dMeHdyUWl3SFhUd3dyeGFRX3c&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s2fd36b6e8f9e4e309febce56b2cd99fa&parId=CDFD5F6443FDC16A%21sc7a65a9b68fa4edca52c2ec930a32707&o=OneUp" target="_blank" rel="noopener noreferrer">Ord. 1847/02</a></li>
-                          <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VwdGFwc2Y2YU54T3BTd3V5VENqSndjQkhIb2dMeHdyUWl3SFhUd3dyeGFRX3c&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s2253d9787dc848969727fb40b9302cdd&parId=CDFD5F6443FDC16A%21sc7a65a9b68fa4edca52c2ec930a32707&o=OneUp" target="_blank" rel="noopener noreferrer">Ord. 3264/22</a></li>
-                          <li><a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9DREZENUY2NDQzRkRDMTZBL0VwdGFwc2Y2YU54T3BTd3V5VENqSndjQkhIb2dMeHdyUWl3SFhUd3dyeGFRX3c&cid=CDFD5F6443FDC16A&id=CDFD5F6443FDC16A%21s725488758bf54454a961723e94c89c05&parId=CDFD5F6443FDC16A%21sc7a65a9b68fa4edca52c2ec930a32707&o=OneUp" target="_blank" rel="noopener noreferrer">Decreto Reglamentario 142/20</a></li>
+                          <li><a href="https://hcdvillagesell.com.ar/ordenanza-1847-02/?highlight=Ord.%201847%2F02" target="_blank" rel="noopener noreferrer">Ord. 1847/02</a></li>
+                          <li><a href="https://drive.google.com/file/d/1i8BV1WfUlNWDfVAcAfj3Mq9CYOZyi9yI/view?usp=sharing" target="_blank" rel="noopener noreferrer">Ord. 3264/22</a></li>
+                          <li><a href="https://drive.google.com/file/d/1S7FpJiUijwCihjv9X9R3vv1sNHbvPOkr/view?usp=sharing" target="_blank" rel="noopener noreferrer">Decreto Reglamentario 142/20</a></li>
                         </ul>
                       </div>
                     </div>
